@@ -45,6 +45,8 @@
 
 <button onclick="buy()">Buy Potato</button>
 <button onclick="sell()">Sell Potato</button>
+<button onclick="buy10()">Buy 10 Potatoes</button>
+<button onclick="sell10()">Sell 10 Potatoes</button>
 
 <script>
 let price = 10;
@@ -71,6 +73,22 @@ function sell() {
     if (owned > 0) {
         money += price;
         owned--;
+        updateDisplay();
+    }
+}
+
+function buy10() {
+    if (money >= price * 10) {
+        money -= price * 10;
+        owned += 10;
+        updateDisplay();
+    }
+}
+
+function sell10() {
+    if (owned >= 10) {
+        money += price * 10;
+        owned -= 10;
         updateDisplay();
     }
 }
