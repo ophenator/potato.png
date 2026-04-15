@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Potato Stock Simulator</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f4f1e6;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            background: #8b5a2b;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background: #a06a35;
+        }
+
+        #price {
+            font-size: 24px;
+        }
+
+        #news {
+            color: darkred;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Potato Stock Sim</h1>
+
+<p id="price">Price: $10</p>
+<p id="news">Market is stable...</p>
+
+<h2>Your Stats</h2>
+<p>Money: $<span id="money">100</span></p>
+<p>Potatoes Owned: <span id="owned">0</span></p>
+
+<button onclick="buy()">Buy Potato</button>
+<button onclick="sell()">Sell Potato</button>
+
+<script>
+let price = 10;
+let money = 100;
+let owned = 0;
+
+function updateDisplay() {
+    document.getElementById("price").innerText = "Price: $" + price.toFixed(2);
+    document.getElementById("money").innerText = money.toFixed(2);
+    document.getElementById("owned").innerText = owned;
+}
+
+// Buy
+function buy() {
+    if (money >= price) {
+        money -= price;
+        owned++;
+        updateDisplay();
+    }
+}
+
+// Sell
+function sell() {
+    if (owned > 0) {
+        money += price;
+        owned--;
+        updateDisplay();
+    }
+}
+
+// Market simulation
+function updateMarket() {
+    let change = (Math.random() - 0.5) * 2;
+
+    // Random events
+    let eventRoll = Math.random();
+
+    if (eventRoll < 0.05) {
+        change += 5;
+        setNews("Potato shortage! Prices skyrocketing!");
+    } 
+    else if (eventRoll < 0.1) {
+        change -= 5;
+        setNews("Potato oversupply! Prices crashing!");
+    } 
+    else {
+        setNews("Market fluctuating...");
+    }
+
+    price += change;
+
+    if (price < 1) price = 1;
+
+    updateDisplay();
+}
+
+function setNews(text) {
+    document.getElementById("news").innerText = text;
+}
+
+setInterval(updateMarket, 2000);
+
+updateDisplay();
+</script>
+
+</body>
+</html>
