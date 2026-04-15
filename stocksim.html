@@ -108,7 +108,30 @@ function updateMarket() {
         change -= 5;
         setNews("Potato oversupply! Prices crashing!");
     } 
-    else {
+    else if (eventRoll < 0.15) {
+        change += 3;
+        setNews("New potato recipe goes viral! Demand surges!");
+    }
+    else if (eventRoll < 0.2) {
+        change -= 3;
+        setNews("Health scare about potatoes! Demand plummets!");
+    } else if (eventRoll < 0.25) {
+        setNews("Celebrity endorses potatoes!");
+    } else if (eventRoll < 0.3) {
+        setNews("Fun potato website somewhere...");
+    } else if (eventRoll < 0.35) {
+        setNews("My cat hates potatoes... fsr");
+    } else if (eventRoll < 0.4) {
+        setNews("My word quota is too high rn");
+    } else if (eventRoll < 0.45) {
+        setNews("POTATOES ARE THE WORLD ECONOMY");
+    } else if (eventRoll < 0.5) {
+        setNews("√ˆ¥≈˚©∆ç¬¨®¨˚ç¬¨†≈∑œ¨");
+    } else if (eventRoll < 0.55) {
+        setNews("Ma ma ma MA. Cant read my, cant read my, no you cant read-a my po-ta-to!");
+    } else if (eventRoll < 0.6) {
+        setNews("I have no more news ideas...");
+    } else {
         setNews("Market fluctuating...");
     }
 
