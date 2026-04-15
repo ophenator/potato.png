@@ -49,20 +49,28 @@
     <button class="button" onclick="buyFarmer()">Buy Farmer (Cost: <span id="farmerCost">10</span>)</button><br>
     <button class="button" onclick="buyTractor()">Buy Tractor (Cost: <span id="tractorCost">100</span>)</button><br>
     <button class="button" onclick="buyLand()">Buy More Land (Cost: <span id="landCost">500</span>)</button><br>
-    <button class="button" onclick="autoFarm()">Auto-Farm (1 Potato/Sec per Farmer, 4 Potatoes/Sec per Tractor, 10 Potatoes/Sec per Land)</button>
+    <button class="button" onclick="buyAutoClicker()">Buy Auto-Clicker (Cost: <span id="autoClickerCost">1000</span>)</button><br>
+    <button class="button" onclick="buyLab()">Buy Laboratory (Cost: <span id="labCost">5000</span>)</button>
+    <button class="button" onclick="autoFarm()">Auto-Farm (1 Potato/Sec per Farmer, 4 Potatoes/Sec per Tractor, 10 Potatoes/Sec per Land, 20 Potatoes/Sec per Auto-Clicker, 50 Potatoes/Sec per Laboratory)</button>
 
     <p>Farmers: <span id="farmers">0</span></p>
     <p>Tractors: <span id="tractors">0</span></p>
     <p>Land: <span id="land">0</span></p>
+    <p>Auto-Clickers: <span id="autoClickers">0</span></p>
+    <p>Laboratories: <span id="labs">0</span></p>
 
 <script>
     let potatoes = 0;
     let farmers = 0;
     let tractors = 0;
     let land = 0;
+    let autoClickers = 0;
+    let lab = 0;
     let farmerCost = 10;
     let tractorCost = 100;
     let landCost = 500;
+    let autoClickerCost = 1000;
+    let labCost = 5000;
 
    function updateDisplay() {
        document.getElementById("count").innerText = "Potatoes: " + Math.floor(potatoes);
@@ -72,6 +80,11 @@
        document.getElementById("tractorCost").innerText = tractorCost;
        document.getElementById("land").innerText = land;
        document.getElementById("landCost").innerText = landCost;
+       document.getElementById("autoClickers").innerText = autoClickers;
+       document.getElementById("autoClickerCost").innerText = autoClickerCost;
+         document.getElementById("labs").innerText = lab;
+         document.getElementById("labCost").innerText = labCost;
+
        // Ensure numeric values for display
        const displayPotatoes = Number.isFinite(Number(potatoes)) ? Math.floor(Number(potatoes)) : 0;
        document.getElementById("count").innerText = "Potatoes: " + displayPotatoes;
@@ -81,7 +94,11 @@
        document.getElementById("tractorCost").innerText = Number.isFinite(Number(tractorCost)) ? Number(tractorCost) : 100;
        document.getElementById("land").innerText = Number.isFinite(Number(land)) ? Number(land) : 0;
        document.getElementById("landCost").innerText = Number.isFinite(Number(landCost)) ? Number(landCost) : 500;
-     }
+       document.getElementById("autoClickers").innerText = Number.isFinite(Number(autoClickers)) ? Number(autoClickers) : 0;
+       document.getElementById("autoClickerCost").innerText = Number.isFinite(Number(autoClickerCost)) ? Number(autoClickerCost) : 1000;
+       document.getElementById("labs").innerText = Number.isFinite(Number(lab)) ? Number(lab) : 0;
+       document.getElementById("labCost").innerText = Number.isFinite(Number(labCost)) ? Number(labCost) : 5000;
+   }
     function clickPotato() {
         potatoes += 1;
         updateDisplay();
@@ -115,9 +132,27 @@
     }
 
     function autoFarm() {
-        potatoes += farmers * 0.5 + tractors * 2 + land * 5;
+        potatoes += farmers * 0.5 + tractors * 2 + land * 5 + autoClickers * 10 + lab * 25;
         updateDisplay();
     }
+
+    function buyAutoClicker() {
+        if (potatoes >= autoClickerCost) {
+            potatoes -= autoClickerCost;
+            autoClickers += 1;
+            autoClickerCost = Math.floor(autoClickerCost * 1.5);
+            updateDisplay();
+        }
+    }
+
+        function buyLab() {
+            if (potatoes >= labCost) {
+                potatoes -= labCost;
+                lab += 1;
+                labCost = Math.floor(labCost * 1.5);
+                updateDisplay();
+            }
+        }
 
      function resetGame() {
         if (confirm("Are you sure you want to reset your game? This cannot be undone.")) {
@@ -125,9 +160,11 @@
             farmers = 0;
             tractors = 0;
             land = 0;
+            autoClickers = 0;
             farmerCost = 10;
             tractorCost = 100;
             landCost = 500;
+            autoClickerCost = 1000;
             updateDisplay();
         }
     }
@@ -143,7 +180,11 @@
             tractors: tractors,
             tractorCost: tractorCost,
             land: land,
-            landCost: landCost
+            landCost: landCost,
+            autoClickers: autoClickers,
+            autoClickerCost: autoClickerCost,
+            lab: lab,
+            labCost: labCost
         }));
     }
 
@@ -159,6 +200,10 @@
             tractorCost = Number(save.tractorCost) || 100;
             land = Number(save.land) || 0;
             landCost = Number(save.landCost) || 500;
+            autoClickers = Number(save.autoClickers) || 0;
+            autoClickerCost = Number(save.autoClickerCost) || 1000;
+            lab = Number(save.lab) || 0;
+            labCost = Number(save.labCost) || 5000;
         } catch (e) {
             console.warn("Failed to load potatoSave, clearing corrupt save:", e);
             localStorage.removeItem("potatoSave");
