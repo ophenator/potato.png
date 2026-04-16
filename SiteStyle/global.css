@@ -424,3 +424,6 @@ td, th {
     float: left
 
 }
+
+.grabbing        { cursor: grabbing; }
+.crosshair        { cursor: crosshair; }
