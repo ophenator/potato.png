@@ -36,7 +36,7 @@
     }
 
     h3 {
-    color: #2fff00;
+    color: #a08237;
     font-size: 1em;
     }
     
@@ -61,7 +61,7 @@
 
 
     a:link {
-       color: #b300ff;
+       color: #a08237;
     }
     a:visited {
        color: #2a3a02;
@@ -111,8 +111,8 @@
             clear:both;
             margin:0px;
             font-size: x-small;
-            color: #2fff00;
-            background-color: #ff68ca;
+            color: #830000;
+            background-color: #c4a66d;
             padding: 10px;
 
         }
@@ -125,7 +125,7 @@
          margin: 0px;
          padding: 0px;
          height: 171px;
-         background-color: #a200ff;
+         background-color: #c4a66d;
          background-image: url(banner.jpg);
          background-repeat: no-repeat;
          background-position: top right;
@@ -136,7 +136,7 @@
          #banner h1
          {
 
-         color:#1eff00;
+         color:#43743D;
          margin:0;
          font-size: 70px;
          padding-left: 25px;
@@ -172,7 +172,7 @@
 }
 
 #navigation a {
-    color:#1eff00;
+    color:#43743D;
     text-decoration: none;
     cursor: pointer;
     border-left-width: 20px;
@@ -182,14 +182,14 @@
 }
 
 #navigation a:hover {
-    color: #49ff80;
+    color: #AD9676;
     text-decoration: none;
     border-bottom-width: 1px;
     border-bottom-style: solid;
-        border-bottom-color: #ff00aa;
-        border-left-width: 1px;
+    border-bottom-color: #AD9676;
+    border-left-width: 1px;
     border-left-style: solid;
-    border-left-color: #ff00aa;
+    border-left-color: #AD9676;
     padding-left: 5px;
 }
 
