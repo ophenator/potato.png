@@ -441,23 +441,31 @@
 
             <select id="songMode">
 
-                <option value="potato">
-                    🥔 POTATO
-                </option>
+    <option value="potato">
+        🥔 POTATO
+    </option>
 
-                <option value="insane">
-                    💥 INSANE
-                </option>
+    <option value="insane">
+        💥 INSANE
+    </option>
 
-                <option value="random">
-                    🎲 RANDOM
-                </option>
+    <option value="random">
+        🎲 RANDOM
+    </option>
 
-                <option value="ajnaiurgbl">
-                    AJNAIURGBL
-                </option>
+    <option value="pop">
+        🎤 POP
+    </option>
 
-            </select>
+    <option value="country">
+        🤠 COUNTRY
+    </option>
+
+    <option value="ajnaiurgbl">
+        AJNAIURGBL
+    </option>
+
+</select>
 
         </div>
 
@@ -618,164 +626,195 @@ Potato.png Music Division
 
 const songs = {
 
+    potato: {
 
-    potato: [
+        verses: [
 
-`[VERSE 1]
-
-The potato woke up late,
+`The potato woke up late,
 And wandered through the garden gate.
 It saw a carrot standing there,
-Wearing someone's folding chair.
+Wearing someone's folding chair.`,
 
-[CHORUS]
+`I found a potato
+Inside my backpack today.
+I don't remember
+Putting it there yesterday.`,
 
-POTATO!
+`Potato on a skateboard,
+Potato on a train,
+Potato wearing sunglasses
+In the middle of the rain.`,
+
+`Butter on the counter,
+Gravy in the pan,
+Potato looked around and said,
+"I think I have a plan."`,
+
+`The potato went online,
+It made an account at night,
+Then spent three hours choosing
+A profile picture just right.`,
+
+`A lonely little potato
+Was sitting by the door,
+It rolled across the kitchen
+And then it rolled some more.`
+
+        ],
+
+        choruses: [
+
+`POTATO!
 POTATO!
 ROLLING THROUGH THE NIGHT!
 
 POTATO!
 POTATO!
-EVERYTHING'S ALRIGHT!
+EVERYTHING'S ALRIGHT!`,
 
-[VERSE 2]
-
-Butter on the counter,
-Gravy in the pan,
-Potato looked around and said,
-"I think I have a plan."
-
-[BRIDGE]
-
-French fries in the moonlight,
-Hash browns in the rain,
-The potato keeps on rolling,
-Again and yet again.
-
-[FINAL CHORUS]
-
-POTATO!
-POTATO!
-SPUDS FOREVERMORE!`,
-
-
-
-`[VERSE 1]
-
-I found a potato
-Inside my backpack today.
-I don't remember
-Putting it there yesterday.
-
-[CHORUS]
-
-HEY!
+`HEY!
 
 WHO PUT THE SPUD IN MY BAG?
 
 HEY!
 
-WHO GAVE THE POTATO A FLAG?
+WHO GAVE THE POTATO A FLAG?`,
 
-[VERSE 2]
-
-It doesn't know karate,
-It doesn't know kung fu,
-But somehow this potato
-Has more confidence than you.
-
-[BRIDGE]
-
-The microwave is humming,
-The toaster starts to glow,
-The potato whispers softly:
-
-"Let's go."
-
-[FINAL CHORUS]
-
-POTATO!
-POTATO!
-THE SPUD HAS LEFT THE BUILDING!`,
-
-
-
-`[VERSE 1]
-
-Potato on a skateboard,
-Potato on a train,
-Potato wearing sunglasses
-In the middle of the rain.
-
-[CHORUS]
-
-ROLL, SPUD, ROLL!
+`ROLL, SPUD, ROLL!
 
 ROLL ACROSS THE FLOOR!
 
 ROLL, SPUD, ROLL!
 
-WHAT ARE YOU WAITING FOR?
+WHAT ARE YOU WAITING FOR?`,
 
-[VERSE 2]
+`POTATO!
+POTATO!
 
-A muffin joins the chorus,
+SPUDS FOREVERMORE!
+
+POTATO!
+POTATO!
+
+WHO COULD ASK FOR MORE?`,
+
+`SPUD ON THE RADIO!
+
+SPUD ON THE TV!
+
+SPUD IN THE COMPUTER!
+
+SPUD FOR YOU AND ME!`,
+
+`POTATO!
+
+WE'RE GOING DOWN!
+
+POTATO!
+
+WE'RE ROLLING THROUGH TOWN!`
+
+        ],
+
+        bridges: [
+
+`French fries in the moonlight,
+Hash browns in the rain,
+The potato keeps on rolling,
+Again and yet again.`,
+
+`The microwave is humming,
+The toaster starts to glow,
+The potato whispers softly:
+
+"Let's go."`,
+
+`A muffin joins the chorus,
 A pickle plays guitar,
 The refrigerator drummer
-Has become a superstar.
+Has become a superstar.`,
 
-[BRIDGE]
-
-Nobody knows the lyrics,
+`Nobody knows the lyrics,
 Nobody knows the tune,
 But everybody's dancing
-Underneath the potato moon.`
+Underneath the potato moon.`,
 
-    ],
+`The modem makes a funny sound,
+The potato spins around,
+The internet connection drops,
+But nobody makes a sound.`,
+
+`The potato sees the future,
+The future looks quite good,
+There are approximately
+Seven million french fries.`
+
+        ]
+
+    },
 
 
+    insane: {
 
-    insane: [
+        verses: [
 
-`[VERSE 1]
-
-THE TOASTER HAS AWAKENED!
+`THE TOASTER HAS AWAKENED!
 
 THE SPOON HAS FOUND ITS VOICE!
 
 THE POTATO HAS PURCHASED
-A SMALL CONVERTIBLE!
+A SMALL CONVERTIBLE!`,
 
-[CHORUS]
+`A potato fell upward,
+The ceiling said hello,
+A sandwich bought a motorcycle,
+And taught it how to row.`,
 
-RUN!
+`The floor is made of jelly!
+The walls are made of cheese!
+The potato has a license
+To operate the breeze!`,
+
+`A duck enters the office,
+Wearing seventeen hats,
+The fax machine applauds,
+And somebody adopts six cats.`,
+
+`A calculator sneezed,
+The keyboard yelled "GOODBYE!",
+A squirrel opened Excel,
+And somehow made a pie.`,
+
+`The printer printed waffles,
+The waffles formed a band,
+The band released an album
+Called "Please Don't Touch That."`
+
+        ],
+
+        choruses: [
+
+`RUN!
 
 THE GRAVY IS COMING!
 
 RUN!
 
-THE GRAVY KNOWS YOUR NAME!
+THE GRAVY KNOWS YOUR NAME!`,
 
-[VERSE 2]
+`BANANA TELEPHONE!
 
-A duck enters the office,
-Wearing seventeen hats,
-The fax machine applauds,
-And somebody adopts six cats.
+POTATO INTERNET!
 
-[BRIDGE]
+THE MOON IS USING BLUETOOTH!
 
-WINDOWS XP!
+WE HAVE MADE A TERRIBLE DECISION!`,
 
-WINDOWS XP!
+`AAAAAAAAAA!
 
-WHY ARE YOU ASKING ME TO UPDATE?
+BUT IN A MUSICAL WAY!`,
 
-I DON'T KNOW WHAT YEAR IT IS!
-
-[FINAL CHORUS]
-
-POTATO!
+`POTATO!
 
 SPOON!
 
@@ -785,305 +824,551 @@ MUFFIN!
 
 EVERYTHING IS FINE!`,
 
-
-
-`[VERSE 1]
-
-A potato fell upward,
-The ceiling said hello,
-A sandwich bought a motorcycle,
-And taught it how to row.
-
-[CHORUS]
-
-BANANA TELEPHONE!
-
-POTATO INTERNET!
-
-THE MOON IS USING BLUETOOTH!
-
-WE HAVE MADE A TERRIBLE DECISION!
-
-[VERSE 2]
-
-The printer printed waffles,
-The waffles formed a band,
-The band released an album
-Called "Please Don't Touch That."
-
-[BRIDGE]
-
-A tiny marching band
-Appeared inside the sink,
-The sink became their manager,
-And now they own a rink.`,
-
-
-
-`[VERSE 1]
-
-THE FLOOR IS MADE OF JELLY!
-
-THE WALLS ARE MADE OF CHEESE!
-
-THE POTATO HAS A LICENSE
-TO OPERATE THE BREEZE!
-
-[CHORUS]
-
-AAAAAAAAAA!
-
-[VERSE 2]
-
-A calculator sneezed,
-The keyboard yelled "GOODBYE!",
-A squirrel opened Excel,
-And somehow made a pie.
-
-[BRIDGE]
-
-The universe is loading...
-
-Please wait...
-
-Please wait...
-
-Please wait...
-
-[FINAL CHORUS]
-
-POTATO HAS STOPPED RESPONDING.
-
-PLEASE RESTART POTATO.`
-
-    ],
-
-
-
-    random: [
-
-`[VERSE 1]
-
-The mailbox knows my password,
-The carpet knows my name,
-A squirrel opened Microsoft Word,
-And nothing was the same.
-
-[CHORUS]
-
-WHAT IS HAPPENING?
+`WHAT IS HAPPENING?!
 
 NOBODY KNOWS!
 
 SOMEONE PRESS THE BUTTON!
 
-PLEASE DON'T PRESS THE BUTTON!
+PLEASE DON'T PRESS THE BUTTON!`,
 
-[BRIDGE]
+`THE UNIVERSE IS LOADING!
 
-The button has been pressed.
+PLEASE WAIT!
+
+PLEASE WAIT!
+
+PLEASE WAIT!`
+
+        ],
+
+        bridges: [
+
+`WINDOWS XP!
+
+WINDOWS XP!
+
+WHY ARE YOU ASKING ME TO UPDATE?
+
+I DON'T KNOW WHAT YEAR IT IS!`,
+
+`The printer has become
+The president of the moon,
+The moon has filed paperwork,
+And the paperwork says "SOON."`,
+
+`A tiny marching band
+Appeared inside the sink,
+The sink became their manager,
+And now they own a rink.`,
+
+`The button has been pressed.
 
 Uh oh.`,
 
+`The squirrel has Excel.
+
+We are doomed.`,
+
+`The universe has encountered
+An unexpected potato.`
+
+        ]
+
+    },
 
 
-`[VERSE 1]
+    random: {
 
-A dinosaur found Wi-Fi,
+        verses: [
+
+`The mailbox knows my password,
+The carpet knows my name,
+A squirrel opened Microsoft Word,
+And nothing was the same.`,
+
+`A dinosaur found Wi-Fi,
 A toaster found a job,
 A tiny purple notebook
-Became the mayor of Bob.
+Became the mayor of Bob.`,
 
-[CHORUS]
+`My pencil has opinions,
+My eraser owns a car,
+My backpack joined a rock band,
+And now they are bizarre.`,
 
-HELLO, INTERNET!
+`A mysterious sandwich
+Was sitting on my chair,
+I asked it where it came from,
+It simply wasn't there.`,
+
+`The refrigerator called me,
+At approximately half past three,
+It said it had discovered
+A brand-new type of tea.`,
+
+`A mailbox met a penguin,
+A penguin met a shoe,
+The shoe became a manager,
+And now it manages two.`
+
+        ],
+
+        choruses: [
+
+`WHAT IS HAPPENING?
+
+NOBODY KNOWS!
+
+SOMEONE PRESS THE BUTTON!
+
+PLEASE DON'T PRESS THE BUTTON!`,
+
+`HELLO, INTERNET!
 
 GOODBYE, REALITY!
 
 PLEASE WAIT WHILE WE DOWNLOAD
-THE NEXT THREE MINUTES.
+THE NEXT THREE MINUTES.`,
 
-[VERSE 2]
-
-The moon sent us a postcard,
-The mailbox sent one back,
-A potato bought a telescope,
-And accidentally found a snack.`,
-
-
-
-`[VERSE 1]
-
-My pencil has opinions,
-My eraser owns a car,
-My backpack joined a rock band,
-And now they are bizarre.
-
-[CHORUS]
-
-ROCK THE PENCIL!
+`ROCK THE PENCIL!
 
 SHAKE THE CHAIR!
 
 SOMEONE PUT A MUFFIN
-IN THE SOFTWARE!
+IN THE SOFTWARE!`,
 
-[VERSE 2]
+`EVERYTHING IS RANDOM!
 
-The keyboard wants vacation,
+NOTHING MAKES SENSE!
+
+WELCOME TO THE INTERNET!
+
+PLEASE PAY THE FENCE!`,
+
+`WHO ARE WE?
+
+WHERE ARE WE?
+
+WHY IS THERE A POTATO?
+
+I DON'T KNOW!`,
+
+`CLICK THE BUTTON!
+
+SPIN THE WHEEL!
+
+THIS SONG IS PROBABLY
+A VERY BIG DEAL!`
+
+        ],
+
+        bridges: [
+
+`The button has been pressed.
+
+Uh oh.`,
+
+`The moon sent us a postcard,
+The mailbox sent one back,
+A potato bought a telescope,
+And accidentally found a snack.`,
+
+`The keyboard wants vacation,
 The mouse wants to retire,
 The monitor is singing,
-And the printer caught on fire.
+And the printer caught on fire.`,
 
-[BRIDGE]
+`Wait.
 
-Wait.
+That's not a metaphor.`,
 
-That's not a metaphor.
+`Nobody understands
+What the duck just said,
+But everyone agreed
+That it sounded very well-read.`,
 
-[FINAL CHORUS]
+`The computer made a noise.
 
-TURN IT OFF!
+Nobody touched it.
 
-TURN IT ON!
+This is probably fine.`
 
-TURN IT OFF AGAIN!`
+        ]
 
-    ],
+    },
 
 
+    pop: {
 
-    ajnaiurgbl: [
+        verses: [
 
-`[VERSE 1]
+`I woke up on a Monday,
+The sun was shining bright,
+I put on my old headphones
+And everything felt right.`,
 
+`You sent me one message,
+At quarter after two,
+It wasn't anything special,
+But somehow I knew.`,
+
+`We're driving through the city,
+The radio turned up,
+We're singing every chorus
+Like we just can't get enough.`,
+
+`I wrote your name in marker
+Across an old notebook,
+Then drew a little star beside it
+Because it seemed to look good.`,
+
+`The summer keeps on going,
+The sky is turning gold,
+We don't know where we're heading,
+But we don't have to know.`,
+
+`I found an old mixtape
+Inside a desk drawer,
+I pressed the play button
+And suddenly wanted more.`
+
+        ],
+
+        choruses: [
+
+`WE'RE LIGHTING UP THE NIGHT!
+
+EVERYTHING FEELS RIGHT!
+
+TURN THE MUSIC UP!
+
+WE'RE NEVER GIVING UP TONIGHT!`,
+
+`AND WE GO!
+
+WE GO!
+
+WHEREVER THE ROAD MAY LEAD!
+
+AND WE KNOW!
+
+WE KNOW!
+
+WE'VE GOT EVERYTHING WE NEED!`,
+
+`THIS IS OUR MOMENT!
+
+THIS IS OUR TIME!
+
+PUT YOUR HANDS UP!
+
+EVERYTHING'S GONNA BE FINE!`,
+
+`OH-OH-OH!
+
+WE'RE ALIVE!
+
+OH-OH-OH!
+
+WE'RE GONNA SHINE!`,
+
+`TURN IT UP!
+
+LET IT PLAY!
+
+WE'LL KEEP DANCING
+
+UNTIL THE END OF THE DAY!`,
+
+`I DON'T KNOW WHERE WE'RE GOING,
+
+BUT I KNOW THAT WE'LL BE OKAY!
+
+SO TURN THE MUSIC LOUDER,
+
+AND LET THE NIGHT BECOME THE DAY!`
+
+        ],
+
+        bridges: [
+
+`And maybe tomorrow
+We'll laugh about tonight,
+But right now we're together,
+And everything feels right.`,
+
+`The whole world keeps on moving,
+But we can take it slow,
+There's nowhere else I'd rather be,
+And nowhere else to go.`,
+
+`One more song,
+One more night,
+One more chance
+To get it right.`,
+
+`The lights are getting brighter,
+The crowd begins to sing,
+And for a little moment
+We can forget everything.`,
+
+`Close your eyes,
+Count to three,
+Take a breath,
+And come with me.`,
+
+`The final beat is coming,
+But we don't have to stop,
+We'll keep this little moment
+Going straight to the top.`
+
+        ]
+
+    },
+
+
+    country: {
+
+        verses: [
+
+`I woke up in the morning
+To the sound of birds outside,
+Grabbed my boots and coffee,
+And headed for the countryside.`,
+
+`There's a gravel road behind me,
+And a long road up ahead,
+Got an old blue truck beside me
+And a cooler by the bed.`,
+
+`The sun is going down now,
+Over fields of golden green,
+It's the prettiest little sunset
+That I've ever seen.`,
+
+`Grandpa had an old guitar
+Sitting underneath the stairs,
+He taught me three old chords,
+And I played them everywhere.`,
+
+`There's a porch light in the distance,
+And a fire burning bright,
+Everybody's telling stories
+On a warm and quiet night.`,
+
+`My dog is sitting beside me,
+Watching everything go by,
+There's a moon above the barn
+And a million stars up high.`
+
+        ],
+
+        choruses: [
+
+`SO LET THAT OLD ROAD ROLL!
+
+LET THAT OLD ROAD ROLL!
+
+WHEREVER IT MAY TAKE ME,
+THAT'S WHERE I'M GONNA GO!`,
+
+`DOWN BY THE OLD OAK TREE,
+
+WHERE THE FIREFLIES GLOW,
+
+I'VE GOT A LITTLE TIME,
+
+AND I'VE GOT NOWHERE TO GO.`,
+
+`RAISE YOUR GLASS!
+
+SING ALONG!
+
+TURN THAT OLD GUITAR UP!
+
+WE'LL KEEP PLAYING
+TILL THE NIGHT IS GONE!`,
+
+`COUNTRY ROADS!
+
+OPEN SKIES!
+
+A LITTLE BIT OF SUNSHINE
+AND A WHOLE LOT OF TIME!`,
+
+`HOME IS WHERE
+THE FRONT PORCH LIGHTS UP!
+
+HOME IS WHERE
+THE COFFEE'S IN MY CUP!
+
+HOME IS WHERE
+THE WHOLE WORLD SLOWS DOWN!`,
+
+`HEY!
+
+LET THE GOOD TIMES ROLL!
+
+HEY!
+
+LET THE OLD GUITAR GO!`
+
+        ],
+
+        bridges: [
+
+`And when the stars come out,
+I'll sit and watch them shine,
+Thinking about all the little things
+That made this life of mine.`,
+
+`There's something about a gravel road
+That makes you want to stay,
+Even when you've got somewhere else
+You need to be today.`,
+
+`The guitar keeps on playing,
+The fire keeps burning bright,
+And nobody's in a hurry
+To go home tonight.`,
+
+`Maybe life ain't perfect,
+But that's alright with me,
+I've got a little open road
+And everything I need.`,
+
+`The morning will come soon,
+The sun will rise again,
+But tonight we'll keep on laughing
+With a few of our best friends.`,
+
+`Sometimes all you really need
+Is an old song and a chair,
+A little bit of quiet,
+And somebody sitting there.`
+
+        ]
+
+    },
+
+
+    ajnaiurgbl: {
+
+        verses: [
+
+`AJNAIURGBL!
+
+BLORP BLORP!
+
+SPUDDLE MEEP!
+
+WOMBAT!`,
+
+`GRAAAAH!
+
+But like...
+
+in a musical way.`,
+
+`WIBBLE WOBBLE,
+SPORKALOO,
+BLING BLONG,
+ZEEP ZEEP ZEEP.`,
+
+`SKRIBBLE!
+
+DORP!
+
+FLIBBITY!
+
+POTATO!`,
+
+`BEEP BEEP BEEP!
+
+THE MUFFIN HAS ARRIVED!
+
+BLORP!`,
+
+`FLOOBY DOOBY
+GRONK GRONK
 AJNAIURGBL
+GOODBYE.`
 
-AJNAIURGBL
+        ],
 
-FLERP BLORP
+        choruses: [
 
-SNAKDJF POTATO
-
-[CHORUS]
+`AJNAIURGBL!
 
 AJNAIURGBL!
 
-AJNAIURGBL!
+GRONK!`,
 
-GRONK!
-
-[VERSE 2]
-
-WIBBLE WOBBLE
-SPORKALOO
-BLING BLONG
-ZEEP ZEEP ZEEP
-
-[BRIDGE]
-
-AAAAAAAAAAAAAAAA
-
-but quietly.
-
-[FINAL CHORUS]
-
-AJNAIURGBL
-
-AJNAIURGBL
-
-POTATO
-
-GOODBYE.`,
-
-
-
-`[VERSE 1]
-
-BLOP!
-
-FRANG!
-
-WUM WUM WUM!
-
-AJNAIURGBL!
-
-[CHORUS]
+`GLOMP!
 
 GLOMP!
 
-GLOMP!
+GLOMP!`,
 
-GLOMP!
+`▓▒░ ERROR ░▒▓
 
-[VERSE 2]
+POTATO NOT FOUND.`,
 
-SKRIBBLE
-DORP
-FLIBBITY
-POTATO
-
-[BRIDGE]
-
-The computer has no idea
-what is happening.
-
-Neither do we.
-
-[FINAL CHORUS]
-
-AJNAIURGBL!
+`BLORP!
 
 BLORP!
 
 POTATO!
 
-END.`,
+BLORP!`,
 
+`AJNAIURGBL!
 
+BLING!
 
-`[VERSE 1]
+BLONG!
 
-GRAAAAH
+WAAAAAA!`,
 
-but like
+`POTATO!
 
-in a musical way.
+AJNAIURGBL!
 
-[CHORUS]
+THANK YOU!`
 
-AJNAIURGBL
-AJNAIURGBL
-AJNAIURGBL
+        ],
 
-[VERSE 2]
+        bridges: [
 
-SPROING!
+`The computer has no idea
+what is happening.
 
-WOBBLE!
+Neither do we.`,
 
-BEEP!
+`AAAAAAAAAAAAAAAA
 
-POTATO!
+but quietly.`,
 
-[BRIDGE]
+`The universe has become
+mildly confused.`,
 
-▓▒░ ERROR ░▒▓
+`▓▒░ SYSTEM POTATO ░▒▓`,
 
-[FINAL CHORUS]
+`Nobody knows what this means.
 
-AJNAIURGBL
+Continue.`,
 
-AJNAIURGBL
+`This is the bridge.
 
-AJNAIURGBL
+We have no idea
+where we're going.`
 
-THANK YOU FOR LISTENING.`
+        ]
 
-    ]
+    }
 
 };
-
 
 let songCount = 0;
 
@@ -1103,14 +1388,13 @@ function generateSong() {
     status.innerHTML =
         "CONNECTING TO POTATO MUSIC SERVER...";
 
-
     output.style.opacity = "0.3";
 
 
     setTimeout(function() {
 
         status.innerHTML =
-            "DOWNLOADING MUSICAL POTATO...";
+            "MIXING MUSICAL INGREDIENTS...";
 
     }, 300);
 
@@ -1118,35 +1402,116 @@ function generateSong() {
     setTimeout(function() {
 
         status.innerHTML =
-            "TUNING VIRTUAL GUITAR...";
+            "RANDOMIZING LYRIC MOLECULES...";
 
     }, 600);
 
 
     setTimeout(function() {
 
-        const songList = songs[mode];
 
-        const selectedSong =
-            songList[
+        /*
+        ==========================================
+        RANDOM LYRIC SELECTION
+        ==========================================
+        */
+
+        const song =
+            songs[mode];
+
+
+        const randomVerse =
+            song.verses[
                 Math.floor(
-                    Math.random() * songList.length
+                    Math.random() * song.verses.length
                 )
             ];
 
 
-        songCount++;
+        const randomChorus =
+            song.choruses[
+                Math.floor(
+                    Math.random() * song.choruses.length
+                )
+            ];
+
+
+        const randomBridge =
+            song.bridges[
+                Math.floor(
+                    Math.random() * song.bridges.length
+                )
+            ];
+
+
+        /*
+        ==========================================
+        BUILD THE SONG
+        ==========================================
+        */
+
+        const songParts = [
+
+            randomVerse,
+
+            randomChorus,
+
+            randomVerse,
+
+            randomBridge,
+
+            randomChorus
+
+        ];
+
+
+        /*
+        Shuffle the sections so the structure
+        isn't always exactly:
+
+        VERSE
+        CHORUS
+        VERSE
+        BRIDGE
+        CHORUS
+        */
+
+        for (
+            let i = songParts.length - 1;
+            i > 0;
+            i--
+        ) {
+
+            const j =
+                Math.floor(
+                    Math.random() * (i + 1)
+                );
+
+            [
+                songParts[i],
+                songParts[j]
+            ] =
+            [
+                songParts[j],
+                songParts[i]
+            ];
+
+        }
 
 
         const songNumber =
-            Math.floor(Math.random() * 9999) + 1;
+            Math.floor(
+                Math.random() * 9999
+            ) + 1;
 
 
         output.innerHTML =
+
             `<div class="song-name">
                 POTATO SONG #${songNumber}
             </div>
-            ${selectedSong}`;
+
+            ${songParts.join("<br><br>")}`;
 
 
         output.style.opacity = "1";
@@ -1156,11 +1521,9 @@ function generateSong() {
             "SONG GENERATED SUCCESSFULLY. " +
             "PLEASE ENJOY RESPONSIBLY.";
 
-
     }, 900);
 
 }
-
 
 </script>
 
