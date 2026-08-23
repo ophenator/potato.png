@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>Potato.png: Potato Haiku Generator</title>
+
+    <meta name="description"
+          content="Potato.png's official potato-powered haiku generation laboratory." />
+
+    <meta name="keywords"
+          content="potato, haiku, poetry, png, omega, internet, 2000s" />
+
+    <meta name="author"
+          content="brother this guy what are you doing" />
+
+    <meta name="copyright"
+          content="Me, Inc." />
+
+    <meta name="rating"
+          content="general" />
+
+    <link href="SiteStyle/global.css" rel="stylesheet" />
+
+    <style>
+
+        /* ==========================================
+           POTATO POETRY GENERATION SYSTEM
+           DO NOT REMOVE THE POTATO
+           ========================================== */
+
+        #haiku-page {
+            background: #f4e8c8;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .potato-header {
+            background: #8b5a2b;
+            color: #fff4d6;
+            border: 5px solid #43250f;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 6px 6px 0 #43250f;
+        }
+
+        .potato-header h1 {
+            font-family: Impact, Arial Black, sans-serif;
+            font-size: 38px;
+            margin: 0;
+            text-shadow: 3px 3px #43250f;
+        }
+
+        .potato-header p {
+            margin-bottom: 0;
+        }
+
+        .corporate-warning {
+            margin: 25px 0;
+            background: #ffff00;
+            border: 4px solid #111;
+            padding: 12px;
+            text-align: center;
+            font-family: Arial Black, Arial, sans-serif;
+        }
+
+        .terminal {
+            background: #111;
+            color: #38ff14;
+            border: 4px inset #777;
+            padding: 15px;
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+            margin: 20px 0;
+        }
+
+        .terminal .red {
+            color: #ff5555;
+        }
+
+        .terminal .white {
+            color: white;
+        }
+
+        .haiku-machine {
+            background: #ded0aa;
+            border: 5px solid #68401f;
+            padding: 20px;
+            margin-top: 25px;
+            box-shadow: 7px 7px 0 #68401f;
+        }
+
+        .machine-title {
+            background: #68401f;
+            color: white;
+            padding: 10px;
+            font-family: Impact, Arial Black, sans-serif;
+            font-size: 25px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .haiku-screen {
+            background: #fffff0;
+            border: 6px inset #aaa;
+            margin: 20px 0;
+            padding: 30px 15px;
+            text-align: center;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .haiku-line {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 27px;
+            color: #3b2412;
+            margin: 12px 0;
+        }
+
+        .haiku-line small {
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+            color: #888;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .generate-button {
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+            padding: 15px;
+            background: #d8d8d8;
+            color: #111;
+            border: 5px outset #eeeeee;
+            font-family: Arial Black, Impact, sans-serif;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .generate-button:hover {
+            background: #eeeeee;
+        }
+
+        .generate-button:active {
+            border-style: inset;
+        }
+
+        .theme-area {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .theme-area select {
+            padding: 8px;
+            font-size: 16px;
+            border: 3px solid #43250f;
+            background: white;
+        }
+
+        .receipt {
+            background: #fffdf1;
+            border: 2px dashed #555;
+            padding: 15px;
+            font-family: "Courier New", monospace;
+            margin-top: 25px;
+            white-space: pre-line;
+        }
+
+        .fake-ad {
+            margin-top: 25px;
+            background: white;
+            border: 4px dashed #c62828;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .fake-ad h2 {
+            color: #c62828;
+            font-family: Impact, Arial Black, sans-serif;
+        }
+
+        .tiny {
+            font-size: 10px;
+            color: #666;
+        }
+
+        .potato {
+            font-size: 60px;
+        }
+
+        .loading {
+            animation: potatoShake 0.08s infinite alternate;
+        }
+
+        @keyframes potatoShake {
+            from {
+                transform: rotate(-1deg);
+            }
+
+            to {
+                transform: rotate(1deg);
+            }
+        }
+
+        .legal {
+            font-size: 9px;
+            color: #555;
+            line-height: 1.4;
+            margin-top: 25px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div id="edges">
+
+
+    <div id="banner">
+
+        <h1>Potato.png:</h1>
+
+        <h2>
+            Exploring the World as Seen Through the Eyes of Potato.png
+        </h2>
+
+    </div>
+
+
+    <div id="main_content">
+
+
+        <div id="haiku-page">
+
+
+            <!-- HEADER -->
+
+            <div class="potato-header">
+
+                <div class="potato">
+                    🥔
+                </div>
+
+                <h1>
+                    POTATO POETRY GENERATOR™
+                </h1>
+
+                <p>
+                    <strong>
+                        A DIVISION OF POTATO.png ENTERPRISES
+                    </strong>
+                </p>
+
+                <p>
+                    "Because apparently potatoes have feelings."
+                </p>
+
+            </div>
+
+
+            <!-- WARNING -->
+
+            <div class="corporate-warning">
+
+                ⚠ IMPORTANT POTATO NOTICE ⚠
+
+                <br><br>
+
+                YOU ARE ABOUT TO GENERATE
+                <strong>ARTIFICIAL POTATO POETRY.</strong>
+
+                <br>
+
+                PLEASE REMAIN CALM.
+
+                <br><br>
+
+                <span class="tiny">
+                    Potato.png is not responsible for unexpected
+                    emotions, philosophical revelations, or sudden
+                    cravings for french fries.
+                </span>
+
+            </div>
+
+
+            <!-- FAKE COMPUTER TERMINAL -->
+
+            <div class="terminal">
+
+                POTATO POETRY OS v2.003
+                <br>
+                ----------------------------------------
+                <br>
+
+                Loading potato kernel...
+                <br>
+
+                <span class="white">
+                    [OK]
+                </span>
+
+                <br>
+
+                Connecting to PotatoNet...
+                <br>
+
+                <span class="white">
+                    [OK]
+                </span>
+
+                <br>
+
+                Dial-up connection detected...
+                <br>
+
+                <span class="red">
+                    [ERROR: PLEASE HANG UP THE PHONE]
+                </span>
+
+                <br>
+
+                Attempting alternate connection...
+                <br>
+
+                Connecting through AOL...
+                <br>
+
+                <span class="white">
+                    [OK???]
+                </span>
+
+                <br>
+
+                Loading poetry engine...
+                <br>
+
+                <span class="white">
+                    [OK]
+                </span>
+
+                <br><br>
+
+                READY.
+
+            </div>
+
+
+            <!-- MACHINE -->
+
+            <div class="haiku-machine">
+
+                <div class="machine-title">
+
+                    POTATO HAIKU GENERATION TERMINAL
+
+                </div>
+
+
+                <div class="theme-area">
+
+                    <label for="theme">
+
+                        SELECT POTATO POETRY CATEGORY:
+
+                    </label>
+
+                    <br><br>
+
+                    <select id="theme">
+
+                        <option value="random">
+                            RANDOM POTATO
+                        </option>
+
+                        <option value="internet">
+                            EARLY INTERNET
+                        </option>
+
+                        <option value="corporate">
+                            CORPORATE POTATO
+                        </option>
+
+                        <option value="technology">
+                            TECHNOLOGY
+                        </option>
+
+                        <option value="food">
+                            POTATO FOOD
+                        </option>
+
+                        <option value="existential">
+                            POTATO PHILOSOPHY
+                        </option>
+
+                        <option value="chaos">
+                            EXTREME POTATO NONSENSE
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- HAIKU -->
+
+                <div class="haiku-screen" id="haikuScreen">
+
+                    <div class="haiku-line" id="line1">
+
+                        Potato waits quietly
+
+                        <small>
+                            [5 POTATO SYLLABLES]
+                        </small>
+
+                    </div>
+
+
+                    <div class="haiku-line" id="line2">
+
+                        The dial-up modem screams
+
+                        <small>
+                            [7 POTATO SYLLABLES]
+                        </small>
+
+                    </div>
+
+
+                    <div class="haiku-line" id="line3">
+
+                        Internet returns
+
+                        <small>
+                            [5 POTATO SYLLABLES]
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    class="generate-button"
+                    onclick="generateHaiku()">
+
+                    🥔 GENERATE POTATO HAIKU 🥔
+
+                </button>
+
+
+                <div class="terminal">
+
+                    GENERATION STATUS:
+                    <br>
+                    <span id="status">
+                        WAITING FOR POTATO...
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- CORPORATE AD -->
+
+            <div class="fake-ad">
+
+                <h2>
+                    HAVE YOU TRIED POTATO POETRY PLUS™?
+                </h2>
+
+                <p>
+                    The revolutionary new poetry service
+                    from Potato.png!
+                </p>
+
+                <p>
+                    Now featuring:
+                </p>
+
+                <ul style="text-align:left; display:inline-block;">
+
+                    <li>
+                        300% more potato
+                    </li>
+
+                    <li>
+                        Unlimited haikus*
+                    </li>
+
+                    <li>
+                        Internet Explorer compatibility
+                    </li>
+
+                    <li>
+                        MySpace Top 8 integration**
+                    </li>
+
+                    <li>
+                        Neopets-compatible emotional support
+                    </li>
+
+                    <li>
+                        Optional iPod synchronization
+                    </li>
+
+                </ul>
+
+                <br>
+
+                <button
+                    class="generate-button"
+                    style="width:70%;"
+                    onclick="fakePurchase()">
+
+                    BUY POTATO POETRY PLUS™
+
+                </button>
+
+                <p class="tiny">
+
+                    *There are only 300 haikus.
+                    <br>
+
+                    **There is no MySpace integration.
+                    We don't know what that would mean.
+
+                </p>
+
+            </div>
+
+
+            <!-- RECEIPT -->
+
+            <div class="receipt">
+
+POTATO.png™
+POETRY GENERATION RECEIPT
+================================
+
+SERVICE:
+Potato Haiku Generation
+
+HAIKUS GENERATED:
+<span id="counter">0</span>
+
+POTATO USED:
+1
+
+INTERNET USED:
+Probably
+
+DIAL-UP MINUTES:
+Unknown
+
+AOL CDs DESTROYED:
+0
+
+LIMEWIRE FILES:
+0
+
+FLASH PLUGINS:
+1
+
+EMOTIONAL DAMAGE:
+Minimal
+
+TOTAL:
+$0.00
+
+PAYMENT METHOD:
+POTATO
+
+THANK YOU FOR USING
+POTATO POETRY GENERATION SYSTEM™
+
+PLEASE DO NOT EAT THE COMPUTER.
+
+            </div>
+
+
+            <!-- EARLY INTERNET SECTION -->
+
+            <div class="fake-ad">
+
+                <h2>
+                    REMEMBER THE OLD INTERNET?
+                </h2>
+
+                <p>
+
+                    The gentle hum of a desktop computer.
+
+                    <br>
+
+                    The terrifying sound of dial-up.
+
+                    <br>
+
+                    Internet Explorer taking approximately
+                    three business days to load.
+
+                    <br>
+
+                    A mysterious AOL CD arriving in the mail.
+
+                    <br>
+
+                    Your AIM buddy list containing 47 people
+                    you haven't spoken to since 2003.
+
+                    <br>
+
+                    Someone asking what your MySpace layout is.
+
+                    <br>
+
+                    And somewhere...
+
+                    <br><br>
+
+                    <strong>
+                        A POTATO.
+                    </strong>
+
+                </p>
+
+            </div>
+
+
+            <!-- LEGAL -->
+
+            <div class="legal">
+
+                POTATO POETRY GENERATION SYSTEM™ is a fictional
+                product of Potato.png and is not affiliated with
+                any real potato company, internet service provider,
+                operating system, social network, video game,
+                media franchise, or suspicious grocery store.
+
+                <br><br>
+
+                References to early internet culture are included
+                for comedic purposes.
+
+                <br><br>
+
+                Potato Poetry Plus™ may not actually exist.
+
+                <br>
+
+                Potato.png cannot guarantee that generated poetry
+                will contain exactly 5-7-5 syllables because the
+                Potato Poetry Engine was programmed by a potato.
+
+                <br><br>
+
+                If your computer begins making potato noises,
+                please restart it.
+
+            </div>
+
+
+        </div>
+
+
+    </div><!-- end of main content -->
+
+
+    <!-- SIDEBAR -->
+
+    <div id="sidebar">
+
+        <div id="navigation">
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="blog.html">
+                        Blog
+                    </a>
+                </li>
+
+                <li>
+                    <a href="who_is_potato.html">
+                        Who is Potato.png?
+                    </a>
+                </li>
+
+                <li>
+                    <a href="what_is_potato.html">
+                        What is Potato?
+                    </a>
+                </li>
+
+                <li>
+                    <a href="potato_philosophy.html">
+                        Potato Philosophy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fun_corner.html">
+                        Fun Corner
+                    </a>
+                </li>
+
+                <li>
+                    <a href="mailto:nowhere@nowhere.com">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div id="footer">
+
+        <h3>
+            Outside Links
+        </h3>
+
+        <p>
+            <a href="https://www.potato.com/"
+               target="_blank">
+                potato homepage
+            </a>
+        </p>
+
+        <p>
+            <a href="https://www.kraftheinz.com/ore-ida/"
+               target="_blank">
+                ore ida
+            </a>
+        </p>
+
+        <p>
+            <a href="https://www.wikipedia.org/wiki/potatoes"
+               target="_blank">
+                All About Potatoes
+            </a>
+        </p>
+
+        <a href="#top">
+            Return to Top
+        </a>
+
+        <p>
+            &copy; 2025 All Rights Reserved.
+        </p>
+
+    </div>
+
+
+</div><!-- end of edges -->
+
+
+<script>
+
+    /*
+     * ==========================================
+     * POTATO POETRY ENGINE
+     * ==========================================
+     */
+
+    const haikus = {
+
+        random: [
+
+            [
+                "Potato sits still",
+                "A modem screams in the night",
+                "Nobody logs on"
+            ],
+
+            [
+                "The potato waits",
+                "Internet Explorer loads",
+                "It is Tuesday now"
+            ],
+
+            [
+                "Potato online",
+                "Someone added me on AIM",
+                "I forgot their name"
+            ],
+
+            [
+                "A potato rolls",
+                "My computer makes a noise",
+                "Everything is fine"
+            ],
+
+            [
+                "The fridge light turns on",
+                "Potato observes the room",
+                "The meeting begins"
+            ],
+
+            [
+                "Small potato dreams",
+                "Of becoming a web star",
+                "Then discovers dial-up"
+            ],
+
+            [
+                "A website loads slow",
+                "The potato has already left",
+                "Please try again"
+            ]
+
+        ],
+
+
+        internet: [
+
+            [
+                "Dial-up sings again",
+                "The loading bar has stopped moving",
+                "Potato accepts"
+            ],
+
+            [
+                "AIM window opens",
+                "Someone's away message reads",
+                "Potato knows why"
+            ],
+
+            [
+                "The homepage loads slow",
+                "A dancing GIF greets the guest",
+                "Welcome to 2004"
+            ],
+
+            [
+                "MySpace calls my name",
+                "Potato chooses a Top Eight",
+                "Chaos is complete"
+            ],
+
+            [
+                "The modem begins",
+                "A thousand tiny robots",
+                "Enter the internet"
+            ],
+
+            [
+                "A strange AOL disk",
+                "Arrives at the potato farm",
+                "Nobody ordered it"
+            ],
+
+            [
+                "The Flash game waits",
+                "Potato clicks the tiny button",
+                "The game has begun"
+            ]
+
+        ],
+
+
+        corporate: [
+
+            [
+                "Potato reports in",
+                "Synergy has been achieved",
+                "Please sign this form"
+            ],
+
+            [
+                "Our potato grows",
+                "Quarterly profits increase",
+                "Nobody knows why"
+            ],
+
+            [
+                "Executive spud",
+                "Schedules another meeting",
+                "Lunch is cancelled"
+            ],
+
+            [
+                "Potato Inc. calls",
+                "Your complimentary spud awaits",
+                "Terms may still apply"
+            ],
+
+            [
+                "The boardroom is cold",
+                "Someone brought a baked potato",
+                "Business continues"
+            ],
+
+            [
+                "New potato policy",
+                "All employees must be round",
+                "HR says nothing"
+            ]
+
+        ],
+
+
+        technology: [
+
+            [
+                "Windows starts up",
+                "Potato watches the progress bar",
+                "Seven minutes remain"
+            ],
+
+            [
+                "The iPod is charged",
+                "Potato selects one thousand songs",
+                "Battery dies at once"
+            ],
+
+            [
+                "Computer hums softly",
+                "The potato presses one key",
+                "Everything changes"
+            ],
+
+            [
+                "The printer wakes up",
+                "It has printed a potato",
+                "Nobody is surprised"
+            ],
+
+            [
+                "Keyboard clicks softly",
+                "Potato enters the password",
+                "Access denied again"
+            ],
+
+            [
+                "The screen turns blue",
+                "Potato stares into the void",
+                "Restart recommended"
+            ]
+
+        ],
+
+
+        food: [
+
+            [
+                "Potato meets butter",
+                "A beautiful union forms",
+                "Dinner understands"
+            ],
+
+            [
+                "Fries become golden",
+                "Potato achieves its purpose",
+                "Everyone applauds"
+            ],
+
+            [
+                "The oven hums low",
+                "One potato waits patiently",
+                "Dinner approaches"
+            ],
+
+            [
+                "Potato in the bowl",
+                "Someone adds excessive cheese",
+                "Science is complete"
+            ],
+
+            [
+                "Hash browns arise",
+                "Breakfast welcomes the potato",
+                "The toaster cheers"
+            ]
+
+        ],
+
+
+        existential: [
+
+            [
+                "Potato asks why",
+                "The refrigerator has no answer",
+                "Silence fills the room"
+            ],
+
+            [
+                "What makes spuds exist",
+                "Is a potato still a potato",
+                "After being mashed"
+            ],
+
+            [
+                "Potato sees the moon",
+                "The moon sees the potato too",
+                "Neither says a word"
+            ],
+
+            [
+                "I am but a spud",
+                "Yet somehow I have Wi-Fi",
+                "What have I become"
+            ],
+
+            [
+                "The potato dreams",
+                "Perhaps it dreams of being fries",
+                "Perhaps it just sleeps"
+            ]
+
+        ],
+
+
+        chaos: [
+
+            [
+                "Potato wears socks",
+                "The toaster declares itself king",
+                "Tuesday is cancelled"
+            ],
+
+            [
+                "A potato screams",
+                "The fax machine answers back",
+                "Nobody investigates"
+            ],
+
+            [
+                "Three spuds enter",
+                "One leaves with an iPod Nano",
+                "The others clap twice"
+            ],
+
+            [
+                "The fridge has Wi-Fi",
+                "The potato has administrator rights",
+                "This was a mistake"
+            ],
+
+            [
+                "Potato.exe",
+                "Has stopped responding again",
+                "Please remain calm"
+            ],
+
+            [
+                "A muffin appears",
+                "Potato files a complaint",
+                "The muffin wins"
+            ],
+
+            [
+                "The website blinks twice",
+                "A potato gains moderator",
+                "The internet shakes"
+            ],
+
+            [
+                "Potato finds a fax",
+                "Nobody knows what it does",
+                "Potato sends one"
+            ]
+
+        ]
+
+    };
+
+
+    let generatedCount = 0;
+
+
+    function generateHaiku() {
+
+        const theme =
+            document.getElementById("theme").value;
+
+        const screen =
+            document.getElementById("haikuScreen");
+
+        const status =
+            document.getElementById("status");
+
+        const line1 =
+            document.getElementById("line1");
+
+        const line2 =
+            document.getElementById("line2");
+
+        const line3 =
+            document.getElementById("line3");
+
+        const counter =
+            document.getElementById("counter");
+
+
+        const list = haikus[theme];
+
+        const chosen =
+            list[Math.floor(Math.random() * list.length)];
+
+
+        screen.classList.add("loading");
+
+        status.innerHTML =
+            "CONTACTING POTATO POETRY SERVER...";
+
+
+        setTimeout(function() {
+
+            status.innerHTML =
+                "DOWNLOADING POTATO WISDOM...";
+
+
+        }, 300);
+
+
+        setTimeout(function() {
+
+            status.innerHTML =
+                "CONSULTING THE POTATO...";
+
+
+        }, 600);
+
+
+        setTimeout(function() {
+
+            line1.innerHTML =
+                chosen[0] +
+                "<small>[5-ish POTATO SYLLABLES]</small>";
+
+
+            line2.innerHTML =
+                chosen[1] +
+                "<small>[7-ish POTATO SYLLABLES]</small>";
+
+
+            line3.innerHTML =
+                chosen[2] +
+                "<small>[5-ish POTATO SYLLABLES]</small>";
+
+
+            generatedCount++;
+
+            counter.innerHTML =
+                generatedCount;
+
+
+            status.innerHTML =
+                "HAIKU GENERATED SUCCESSFULLY. POTATO APPROVES.";
+
+
+            screen.classList.remove("loading");
+
+
+        }, 900);
+
+    }
+
+
+    function fakePurchase() {
+
+        alert(
+            "THANK YOU FOR YOUR PURCHASE!\n\n" +
+            "Unfortunately, Potato Poetry Plus™ " +
+            "does not exist.\n\n" +
+            "Your potato has been refunded."
+        );
+
+    }
+
+</script>
+
+
+</body>
+</html>
