@@ -29,6 +29,49 @@
            POTATO POETRY GENERATION SYSTEM
            ========================================== */
 
+           .song-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.song-number {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.65;
+    margin-bottom: 30px;
+}
+
+.song-section {
+    margin: 25px 0;
+    padding: 15px;
+    border: 2px dashed currentColor;
+}
+
+.section-label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.lyrics {
+    line-height: 1.7;
+}
+
+.copyright-disclaimer {
+    margin-top: 35px;
+    padding: 10px;
+    text-align: center;
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+#songOutput {
+    transition: opacity 0.25s ease;
+}
+
         #haiku-page {
             background: #f4e8c8;
             padding: 20px;
@@ -756,6 +799,22 @@ Seven million french fries.`
 
     insane: {
 
+        titles: [
+        "WINDOWS XP: THE MUSICAL",
+        "The Printer Knows",
+        "Please Do Not Press The Button",
+        "A Duck Has Entered The Building",
+        "The Gravy Incident",
+        "404: Song Not Found",
+        "The Muffin Has Arrived",
+        "Potato.exe Has Become Self-Aware",
+        "WHY IS THE CEILING SINGING?",
+        "The Squirrel Has Excel",
+        "Emergency Potato Broadcast",
+        "This Was A Mistake"
+    ],
+
+
         verses: [
 
 `THE TOASTER HAS AWAKENED!
@@ -880,6 +939,21 @@ An unexpected potato.`
 
     random: {
 
+        titles: [
+        "MySpace Top 8",
+        "The Mysterious Sandwich",
+        "Who Gave The Duck Wi-Fi?",
+        "Please Wait...",
+        "The Internet Is Probably Fine",
+        "A Normal Tuesday",
+        "The Chair Has Opinions",
+        "Totally Normal Song",
+        "Loading Musical Content...",
+        "The Great Refrigerator Mystery",
+        "I Have No Idea What This Is",
+        "Untitled_Final_FINAL_v7"
+    ],
+
         verses: [
 
 `The mailbox knows my password,
@@ -1000,6 +1074,21 @@ This is probably fine.`
 
 
     pop: {
+
+        titles: [
+        "Turn It Up",
+        "One More Night",
+        "Everything Feels Right",
+        "Summer Again",
+        "Our Moment",
+        "Lights Up",
+        "Radio Heart",
+        "Press Play",
+        "Dancing Through The Night",
+        "This Is Our Song",
+        "Golden Hour",
+        "One More Song"
+    ],
 
         verses: [
 
@@ -1130,6 +1219,21 @@ Going straight to the top.`
 
     country: {
 
+        titles: [
+        "Down That Old Road",
+        "Porch Light",
+        "Coffee and Gravel Roads",
+        "Under the Barnyard Moon",
+        "The Old Guitar",
+        "Where the Fireflies Glow",
+        "Boots by the Door",
+        "A Little Open Road",
+        "Stars Above the Barn",
+        "Home Is Where the Porch Light Is",
+        "Just One More Song",
+        "The Dog Knows the Way Home"
+    ],
+
         verses: [
 
 `I woke up in the morning
@@ -1255,6 +1359,21 @@ And somebody sitting there.`
 
     ajnaiurgbl: {
 
+        titles: [
+        "AJNAIURGBL",
+        "BLORP",
+        "The Forbidden Spud",
+        "GLOMP",
+        "WIBBLE WOBBLE",
+        "POTATO.EXE",
+        "The Great Blongening",
+        "GRONK",
+        "A Song Has Occurred",
+        "FLOOBY DOOBY",
+        "▓▒░ POTATO ░▒▓",
+        "AAAAAAAA But Quietly"
+    ],
+
         verses: [
 
 `AJNAIURGBL!
@@ -1375,156 +1494,224 @@ let songCount = 0;
 
 function generateSong() {
 
-    const mode =
-        document.getElementById("songMode").value;
+    const mode = document.getElementById("songMode").value;
 
-    const output =
-        document.getElementById("songOutput");
+    const output = document.getElementById("songOutput");
+    const status = document.getElementById("songStatus");
 
-    const status =
-        document.getElementById("songStatus");
+    const song = songs[mode];
+
+    if (!song) {
+        output.innerHTML = "ERROR: POTATO NOT FOUND.";
+        return;
+    }
 
 
-    status.innerHTML =
-        "CONNECTING TO POTATO MUSIC SERVER...";
+    // ==========================================
+    // RANDOM PICKER
+    // ==========================================
+
+    function pick(array) {
+        return array[
+            Math.floor(Math.random() * array.length)
+        ];
+    }
+
+
+    // ==========================================
+    // RANDOM TITLE
+    // ==========================================
+
+    const title = pick(song.titles);
+
+
+    // ==========================================
+    // RANDOM SONG NUMBER
+    // ==========================================
+
+    const songNumber =
+        Math.floor(Math.random() * 99999) + 1;
+
+
+    // ==========================================
+    // PICK DIFFERENT LYRIC SECTIONS
+    // ==========================================
+
+    const verse1 = pick(song.verses);
+    const verse2 = pick(song.verses);
+
+    const chorus1 = pick(song.choruses);
+    const chorus2 = pick(song.choruses);
+
+    const bridge = pick(song.bridges);
+
+
+    // ==========================================
+    // NORMAL SONG STRUCTURE
+    // ==========================================
+
+    let sections = [
+        {
+            type: "VERSE",
+            text: verse1
+        },
+
+        {
+            type: "CHORUS",
+            text: chorus1
+        },
+
+        {
+            type: "VERSE",
+            text: verse2
+        },
+
+        {
+            type: "BRIDGE",
+            text: bridge
+        },
+
+        {
+            type: "CHORUS",
+            text: chorus2
+        }
+    ];
+
+
+    // ==========================================
+    // SOMETIMES MAKE THE STRUCTURE STUPID
+    // ==========================================
+
+    if (Math.random() < 0.35) {
+
+        for (let i = sections.length - 1; i > 0; i--) {
+
+            const j =
+                Math.floor(Math.random() * (i + 1));
+
+            [
+                sections[i],
+                sections[j]
+            ] =
+            [
+                sections[j],
+                sections[i]
+            ];
+        }
+    }
+
+
+    // ==========================================
+    // GENERATE HTML
+    // ==========================================
+
+    let songHTML = "";
+
+
+    sections.forEach(section => {
+
+        songHTML += `
+
+            <div class="song-section">
+
+                <div class="section-label">
+                    ${section.type}
+                </div>
+
+                <div class="lyrics">
+                    ${section.text.replace(/\n/g, "<br>")}
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    // ==========================================
+    // STATUS MESSAGES
+    // ==========================================
+
+    const messages = [
+
+        "CONTACTING THE POTATO MUSIC DEPARTMENT...",
+
+        "RANDOMIZING LYRIC MOLECULES...",
+
+        "ASKING THE TOASTER FOR PERMISSION...",
+
+        "TUNING THE INVISIBLE GUITAR...",
+
+        "CALIBRATING THE SPUD...",
+
+        "DOWNLOADING MUSICAL POTATOES...",
+
+        "REMOVING EXCESS MUFFIN...",
+
+        "CONSULTING THE EARLY INTERNET...",
+
+        "CHECKING MYSPACE TOP 8...",
+
+        "SHAKING THE MUSICAL BAG...",
+
+        "PLEASE WAIT. THE POTATO IS THINKING..."
+
+    ];
+
+
+    status.innerHTML = pick(messages);
 
     output.style.opacity = "0.3";
 
 
-    setTimeout(function() {
+    // ==========================================
+    // LITTLE DRAMATIC DELAY
+    // ==========================================
+
+    setTimeout(() => {
 
         status.innerHTML =
-            "MIXING MUSICAL INGREDIENTS...";
+            "GENERATING SONG #" + songNumber + "...";
 
-    }, 300);
-
-
-    setTimeout(function() {
-
-        status.innerHTML =
-            "RANDOMIZING LYRIC MOLECULES...";
-
-    }, 600);
+    }, 350);
 
 
-    setTimeout(function() {
+    setTimeout(() => {
 
+        output.innerHTML = `
 
-        /*
-        ==========================================
-        RANDOM LYRIC SELECTION
-        ==========================================
-        */
+            <div class="generated-song">
 
-        const song =
-            songs[mode];
+                <div class="song-title">
+                    ${title}
+                </div>
 
+                <div class="song-number">
+                    POTATO MUSIC DATABASE ENTRY #${songNumber}
+                </div>
 
-        const randomVerse =
-            song.verses[
-                Math.floor(
-                    Math.random() * song.verses.length
-                )
-            ];
+                ${songHTML}
 
+                <div class="copyright-disclaimer">
+                    THIS SONG WAS GENERATED BY A POTATO.
+                    <br>
+                    PLEASE DO NOT ASK WHICH POTATO.
+                </div>
 
-        const randomChorus =
-            song.choruses[
-                Math.floor(
-                    Math.random() * song.choruses.length
-                )
-            ];
-
-
-        const randomBridge =
-            song.bridges[
-                Math.floor(
-                    Math.random() * song.bridges.length
-                )
-            ];
-
-
-        /*
-        ==========================================
-        BUILD THE SONG
-        ==========================================
-        */
-
-        const songParts = [
-
-            randomVerse,
-
-            randomChorus,
-
-            randomVerse,
-
-            randomBridge,
-
-            randomChorus
-
-        ];
-
-
-        /*
-        Shuffle the sections so the structure
-        isn't always exactly:
-
-        VERSE
-        CHORUS
-        VERSE
-        BRIDGE
-        CHORUS
-        */
-
-        for (
-            let i = songParts.length - 1;
-            i > 0;
-            i--
-        ) {
-
-            const j =
-                Math.floor(
-                    Math.random() * (i + 1)
-                );
-
-            [
-                songParts[i],
-                songParts[j]
-            ] =
-            [
-                songParts[j],
-                songParts[i]
-            ];
-
-        }
-
-
-        const songNumber =
-            Math.floor(
-                Math.random() * 9999
-            ) + 1;
-
-
-        output.innerHTML =
-
-            `<div class="song-name">
-                POTATO SONG #${songNumber}
             </div>
 
-            ${songParts.join("<br><br>")}`;
-
+        `;
 
         output.style.opacity = "1";
 
-
         status.innerHTML =
             "SONG GENERATED SUCCESSFULLY. " +
-            "PLEASE ENJOY RESPONSIBLY.";
+            "QUALITY CONTROL HAS BEEN NOTIFIED.";
 
-    }, 900);
+    }, 800);
 
 }
-
 </script>
 
 </div>
