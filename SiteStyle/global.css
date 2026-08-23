@@ -427,3 +427,117 @@ td, th {
 
 .grabbing        { cursor: grabbing; }
 .crosshair        { cursor: crosshair; }
+
+/* =========================================================
+   POTATO SONG GENERATOR
+   DO NOT LET THIS ESCAPE INTO THE REST OF THE WEBSITE
+   ========================================================= */
+
+#song-generator {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Title */
+
+#song-generator .song-title {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 auto 4px auto;
+    padding: 6px 12px;
+}
+
+#song-generator .song-number {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    margin-bottom: 18px;
+    opacity: 0.7;
+}
+
+/* Song itself */
+
+#song-generator .generated-song {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Individual sections */
+
+#song-generator .song-section {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+    padding: 8px 12px;
+    box-sizing: border-box;
+
+    border-left: 4px solid currentColor;
+}
+
+/* VERSE / CHORUS / BRIDGE */
+
+#song-generator .section-label {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+    padding: 0;
+}
+
+/* Actual lyrics */
+
+#song-generator .lyrics {
+    display: block;
+    font-size: 16px;
+    line-height: 1.35;
+    margin: 0;
+    padding: 0;
+}
+
+/* Generator footer */
+
+#song-generator .copyright-disclaimer {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    margin-top: 18px;
+    padding-top: 8px;
+
+    border-top: 1px dashed currentColor;
+    opacity: 0.6;
+}
+
+/* Output area */
+
+#songOutput {
+    display: block;
+    width: 100%;
+    margin: 15px auto;
+}
+
+/* Status text */
+
+#songStatus {
+    text-align: center;
+    margin: 8px auto;
+}
+
+/* Don't let the site's generic paragraph/list rules
+   wreck the generated song */
+
+#song-generator .song-section p,
+#song-generator .lyrics p {
+    margin: 0;
+    padding: 0;
+}
+
+#song-generator .song-section br {
+    line-height: 1.35;
+}
