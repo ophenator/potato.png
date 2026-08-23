@@ -25,386 +25,55 @@
 
     <style>
 
-        /* ==========================================
-           POTATO POETRY GENERATION SYSTEM
-           ========================================== */
-
-           .song-title {
-    font-size: 32px;
+.song-title {
+    font-size: 28px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .song-number {
     text-align: center;
-    font-size: 12px;
-    opacity: 0.65;
-    margin-bottom: 30px;
+    font-size: 10px;
+    opacity: 0.6;
+    margin-bottom: 15px;
 }
 
 .song-section {
-    margin: 25px 0;
-    padding: 15px;
-    border: 2px dashed currentColor;
+    margin: 10px 0;
+    padding: 8px 12px;
+    border-left: 3px solid currentColor;
 }
 
 .section-label {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
-    margin-bottom: 10px;
     letter-spacing: 2px;
+    margin-bottom: 3px;
+    opacity: 0.65;
 }
 
 .lyrics {
-    line-height: 1.7;
+    line-height: 1.35;
+    font-size: 16px;
+}
+
+.generated-song {
+    max-width: 700px;
+    margin: auto;
 }
 
 .copyright-disclaimer {
-    margin-top: 35px;
-    padding: 10px;
+    margin-top: 15px;
+    padding-top: 8px;
+    border-top: 1px dashed currentColor;
     text-align: center;
-    font-size: 11px;
-    opacity: 0.6;
+    font-size: 9px;
+    opacity: 0.5;
 }
 
 #songOutput {
     transition: opacity 0.25s ease;
-}
-
-        #haiku-page {
-            background: #f4e8c8;
-            padding: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .potato-header {
-            background: #8b5a2b;
-            color: #fff4d6;
-            border: 5px solid #43250f;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 6px 6px 0 #43250f;
-        }
-
-        .potato-header h1 {
-            font-family: Impact, Arial Black, sans-serif;
-            font-size: 38px;
-            margin: 0;
-            text-shadow: 3px 3px #43250f;
-        }
-
-        .potato-header p {
-            margin-bottom: 0;
-        }
-
-        .corporate-warning {
-            margin: 25px 0;
-            background: #ffff00;
-            border: 4px solid #111;
-            padding: 12px;
-            text-align: center;
-            font-family: Arial Black, Arial, sans-serif;
-        }
-
-        .terminal {
-            background: #111;
-            color: #38ff14;
-            border: 4px inset #777;
-            padding: 15px;
-            font-family: "Courier New", monospace;
-            font-size: 14px;
-            margin: 20px 0;
-        }
-
-        .terminal .red {
-            color: #ff5555;
-        }
-
-        .terminal .white {
-            color: white;
-        }
-
-        .haiku-machine {
-            background: #ded0aa;
-            border: 5px solid #68401f;
-            padding: 20px;
-            margin-top: 25px;
-            box-shadow: 7px 7px 0 #68401f;
-        }
-
-        .machine-title {
-            background: #68401f;
-            color: white;
-            padding: 10px;
-            font-family: Impact, Arial Black, sans-serif;
-            font-size: 25px;
-            text-align: center;
-            letter-spacing: 1px;
-        }
-
-        .haiku-screen {
-            background: #fffff0;
-            border: 6px inset #aaa;
-            margin: 20px 0;
-            padding: 30px 15px;
-            text-align: center;
-            min-height: 250px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .haiku-line {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 27px;
-            color: #3b2412;
-            margin: 12px 0;
-        }
-
-        .haiku-line small {
-            font-family: "Courier New", monospace;
-            font-size: 11px;
-            color: #888;
-            display: block;
-            margin-top: 4px;
-        }
-
-        .generate-button {
-            display: block;
-            width: 80%;
-            margin: 20px auto;
-            padding: 15px;
-            background: #d8d8d8;
-            color: #111;
-            border: 5px outset #eeeeee;
-            font-family: Arial Black, Impact, sans-serif;
-            font-size: 22px;
-            cursor: pointer;
-        }
-
-        .generate-button:hover {
-            background: #eeeeee;
-        }
-
-        .generate-button:active {
-            border-style: inset;
-        }
-
-        .theme-area {
-            text-align: center;
-            margin: 15px 0;
-        }
-
-        .theme-area select {
-            padding: 8px;
-            font-size: 16px;
-            border: 3px solid #43250f;
-            background: white;
-        }
-
-        .receipt {
-            background: #fffdf1;
-            border: 2px dashed #555;
-            padding: 15px;
-            font-family: "Courier New", monospace;
-            margin-top: 25px;
-            white-space: pre-line;
-        }
-
-        .fake-ad {
-            margin-top: 25px;
-            background: white;
-            border: 4px dashed #c62828;
-            padding: 15px;
-            text-align: center;
-        }
-
-        .fake-ad h2 {
-            color: #c62828;
-            font-family: Impact, Arial Black, sans-serif;
-        }
-
-        .tiny {
-            font-size: 10px;
-            color: #666;
-        }
-
-        .potato {
-            font-size: 60px;
-        }
-
-        .loading {
-            animation: potatoShake 0.08s infinite alternate;
-        }
-
-        @keyframes potatoShake {
-            from {
-                transform: rotate(-1deg);
-            }
-
-            to {
-                transform: rotate(1deg);
-            }
-        }
-
-        .legal {
-            font-size: 9px;
-            color: #555;
-            line-height: 1.4;
-            margin-top: 25px;
-        }
-
-    </style>
-
-</head>
-
-
-<body>
-
-<div id="edges">
-
-
-    <div id="banner">
-
-        <h1>Potato.png:</h1>
-
-        <h2>
-            Exploring the World as Seen Through the Eyes of Potato.png
-        </h2>
-
-    </div>
-
-
-    <div id="main_content">
-
-<style>
-
-#song-generator {
-    background: #e8d7ad;
-    border: 5px solid #3b2412;
-    padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    box-shadow: 8px 8px 0 #3b2412;
-}
-
-.song-title {
-    background: #3b2412;
-    color: #fff4d6;
-    text-align: center;
-    padding: 15px;
-    font-family: Impact, Arial Black, sans-serif;
-    font-size: 32px;
-    text-shadow: 3px 3px #000;
-}
-
-.song-subtitle {
-    text-align: center;
-    font-family: "Courier New", monospace;
-    margin: 15px;
-}
-
-.warning-box {
-    background: #ffff00;
-    border: 4px solid black;
-    padding: 12px;
-    text-align: center;
-    font-family: Arial Black, Arial, sans-serif;
-    margin: 20px 0;
-}
-
-.song-machine {
-    background: #c5b58c;
-    border: 5px ridge #777;
-    padding: 20px;
-}
-
-.machine-header {
-    background: #111;
-    color: #39ff14;
-    padding: 12px;
-    font-family: "Courier New", monospace;
-    font-weight: bold;
-}
-
-.mode-select {
-    text-align: center;
-    margin: 20px;
-}
-
-.mode-select select {
-    font-size: 18px;
-    padding: 8px;
-    border: 3px solid #3b2412;
-}
-
-.song-screen {
-    background: #fffff0;
-    border: 7px inset #aaa;
-    min-height: 430px;
-    padding: 25px;
-    margin: 20px 0;
-    overflow: auto;
-}
-
-.song-output {
-    white-space: pre-line;
-    text-align: center;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 21px;
-    line-height: 1.6;
-    color: #28190d;
-}
-
-.song-name {
-    font-family: Impact, Arial Black, sans-serif;
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.generate-song {
-    display: block;
-    width: 85%;
-    margin: auto;
-    padding: 16px;
-    font-size: 22px;
-    font-family: Arial Black, Impact, sans-serif;
-    background: #d6d6d6;
-    border: 5px outset #eee;
-    cursor: pointer;
-}
-
-.generate-song:active {
-    border-style: inset;
-}
-
-.generate-song:hover {
-    background: #eee;
-}
-
-.status-box {
-    margin-top: 20px;
-    background: #111;
-    color: #39ff14;
-    padding: 12px;
-    font-family: "Courier New", monospace;
-}
-
-.fake-record {
-    background: white;
-    border: 4px dashed #333;
-    padding: 15px;
-    margin-top: 25px;
-    text-align: center;
-}
-
-.fake-record h2 {
-    font-family: Impact, Arial Black, sans-serif;
-}
-
-.tiny-text {
-    font-size: 10px;
-    color: #666;
 }
 
 </style>
@@ -1494,63 +1163,81 @@ let songCount = 0;
 
 function generateSong() {
 
-    const mode = document.getElementById("songMode").value;
+    const mode =
+        document.getElementById("songMode").value;
 
-    const output = document.getElementById("songOutput");
-    const status = document.getElementById("songStatus");
+    const output =
+        document.getElementById("songOutput");
 
-    const song = songs[mode];
+    const status =
+        document.getElementById("songStatus");
 
-    if (!song) {
-        output.innerHTML = "ERROR: POTATO NOT FOUND.";
+
+    // Make sure the selected mode exists
+    if (!songs[mode]) {
+
+        output.innerHTML =
+            "<b>ERROR: POTATO NOT FOUND.</b>";
+
+        status.innerHTML =
+            "MUSIC SERVER CONFUSED.";
+
         return;
     }
 
 
-    // ==========================================
+    const song = songs[mode];
+
+
+    // ------------------------------------------
     // RANDOM PICKER
-    // ==========================================
+    // ------------------------------------------
 
     function pick(array) {
+
         return array[
-            Math.floor(Math.random() * array.length)
+            Math.floor(
+                Math.random() * array.length
+            )
         ];
+
     }
 
 
-    // ==========================================
-    // RANDOM TITLE
-    // ==========================================
-
-    const title = pick(song.titles);
-
-
-    // ==========================================
-    // RANDOM SONG NUMBER
-    // ==========================================
-
-    const songNumber =
-        Math.floor(Math.random() * 99999) + 1;
-
-
-    // ==========================================
-    // PICK DIFFERENT LYRIC SECTIONS
-    // ==========================================
+    // ------------------------------------------
+    // PICK EACH PART INDEPENDENTLY
+    // ------------------------------------------
 
     const verse1 = pick(song.verses);
+
     const verse2 = pick(song.verses);
 
     const chorus1 = pick(song.choruses);
+
     const chorus2 = pick(song.choruses);
 
     const bridge = pick(song.bridges);
 
 
-    // ==========================================
-    // NORMAL SONG STRUCTURE
-    // ==========================================
+    // ------------------------------------------
+    // RANDOM TITLE
+    // ------------------------------------------
+
+    const title = pick(song.titles);
+
+
+    const songNumber =
+        Math.floor(
+            Math.random() * 99999
+        ) + 1;
+
+
+    // ------------------------------------------
+    // BUILD SONG
+    // ------------------------------------------
 
     let sections = [
+
         {
             type: "VERSE",
             text: verse1
@@ -1575,40 +1262,48 @@ function generateSong() {
             type: "CHORUS",
             text: chorus2
         }
+
     ];
 
 
-    // ==========================================
-    // SOMETIMES MAKE THE STRUCTURE STUPID
-    // ==========================================
+    // ------------------------------------------
+    // 25% CHANCE OF ABSOLUTE MUSICAL NONSENSE
+    // ------------------------------------------
 
-    if (Math.random() < 0.35) {
+    if (Math.random() < 0.25) {
 
-        for (let i = sections.length - 1; i > 0; i--) {
+        for (
+            let i = sections.length - 1;
+            i > 0;
+            i--
+        ) {
 
             const j =
-                Math.floor(Math.random() * (i + 1));
+                Math.floor(
+                    Math.random() * (i + 1)
+                );
 
             [
                 sections[i],
                 sections[j]
-            ] =
-            [
+            ] = [
                 sections[j],
                 sections[i]
             ];
+
         }
+
     }
 
 
-    // ==========================================
-    // GENERATE HTML
-    // ==========================================
+    // ------------------------------------------
+    // MAKE HTML
+    // ------------------------------------------
 
     let songHTML = "";
 
 
-    sections.forEach(section => {
+    sections.forEach(function(section) {
 
         songHTML += `
 
@@ -1629,55 +1324,50 @@ function generateSong() {
     });
 
 
-    // ==========================================
-    // STATUS MESSAGES
-    // ==========================================
+    // ------------------------------------------
+    // STATUS
+    // ------------------------------------------
 
     const messages = [
 
-        "CONTACTING THE POTATO MUSIC DEPARTMENT...",
+        "MIXING POTATOES...",
 
-        "RANDOMIZING LYRIC MOLECULES...",
+        "RANDOMIZING LYRICS...",
 
         "ASKING THE TOASTER FOR PERMISSION...",
 
-        "TUNING THE INVISIBLE GUITAR...",
+        "CALIBRATING SPUD...",
 
-        "CALIBRATING THE SPUD...",
-
-        "DOWNLOADING MUSICAL POTATOES...",
-
-        "REMOVING EXCESS MUFFIN...",
-
-        "CONSULTING THE EARLY INTERNET...",
+        "LOADING 2004 INTERNET...",
 
         "CHECKING MYSPACE TOP 8...",
 
-        "SHAKING THE MUSICAL BAG...",
+        "TUNING INVISIBLE GUITAR...",
 
-        "PLEASE WAIT. THE POTATO IS THINKING..."
+        "REMOVING EXCESS MUFFIN...",
+
+        "CONSULTING THE MUSIC POTATO..."
 
     ];
 
 
-    status.innerHTML = pick(messages);
+    status.innerHTML =
+        pick(messages);
 
     output.style.opacity = "0.3";
 
 
-    // ==========================================
-    // LITTLE DRAMATIC DELAY
-    // ==========================================
-
-    setTimeout(() => {
+    setTimeout(function() {
 
         status.innerHTML =
-            "GENERATING SONG #" + songNumber + "...";
+            "GENERATING SONG #" +
+            songNumber +
+            "...";
 
-    }, 350);
+    }, 300);
 
 
-    setTimeout(() => {
+    setTimeout(function() {
 
         output.innerHTML = `
 
@@ -1694,22 +1384,27 @@ function generateSong() {
                 ${songHTML}
 
                 <div class="copyright-disclaimer">
+
                     THIS SONG WAS GENERATED BY A POTATO.
+
                     <br>
+
                     PLEASE DO NOT ASK WHICH POTATO.
+
                 </div>
 
             </div>
 
         `;
 
+
         output.style.opacity = "1";
 
-        status.innerHTML =
-            "SONG GENERATED SUCCESSFULLY. " +
-            "QUALITY CONTROL HAS BEEN NOTIFIED.";
 
-    }, 800);
+        status.innerHTML =
+            "SONG GENERATED SUCCESSFULLY.";
+
+    }, 700);
 
 }
 </script>
