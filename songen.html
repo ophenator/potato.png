@@ -27,7 +27,6 @@
 
         /* ==========================================
            POTATO POETRY GENERATION SYSTEM
-           DO NOT REMOVE THE POTATO
            ========================================== */
 
         #haiku-page {
@@ -236,448 +235,936 @@
 
     <div id="main_content">
 
+<style>
+
+#song-generator {
+    background: #e8d7ad;
+    border: 5px solid #3b2412;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 8px 8px 0 #3b2412;
+}
+
+.song-title {
+    background: #3b2412;
+    color: #fff4d6;
+    text-align: center;
+    padding: 15px;
+    font-family: Impact, Arial Black, sans-serif;
+    font-size: 32px;
+    text-shadow: 3px 3px #000;
+}
+
+.song-subtitle {
+    text-align: center;
+    font-family: "Courier New", monospace;
+    margin: 15px;
+}
+
+.warning-box {
+    background: #ffff00;
+    border: 4px solid black;
+    padding: 12px;
+    text-align: center;
+    font-family: Arial Black, Arial, sans-serif;
+    margin: 20px 0;
+}
+
+.song-machine {
+    background: #c5b58c;
+    border: 5px ridge #777;
+    padding: 20px;
+}
+
+.machine-header {
+    background: #111;
+    color: #39ff14;
+    padding: 12px;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+}
+
+.mode-select {
+    text-align: center;
+    margin: 20px;
+}
+
+.mode-select select {
+    font-size: 18px;
+    padding: 8px;
+    border: 3px solid #3b2412;
+}
+
+.song-screen {
+    background: #fffff0;
+    border: 7px inset #aaa;
+    min-height: 430px;
+    padding: 25px;
+    margin: 20px 0;
+    overflow: auto;
+}
+
+.song-output {
+    white-space: pre-line;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    line-height: 1.6;
+    color: #28190d;
+}
+
+.song-name {
+    font-family: Impact, Arial Black, sans-serif;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.generate-song {
+    display: block;
+    width: 85%;
+    margin: auto;
+    padding: 16px;
+    font-size: 22px;
+    font-family: Arial Black, Impact, sans-serif;
+    background: #d6d6d6;
+    border: 5px outset #eee;
+    cursor: pointer;
+}
+
+.generate-song:active {
+    border-style: inset;
+}
+
+.generate-song:hover {
+    background: #eee;
+}
 
-        <div id="haiku-page">
+.status-box {
+    margin-top: 20px;
+    background: #111;
+    color: #39ff14;
+    padding: 12px;
+    font-family: "Courier New", monospace;
+}
 
+.fake-record {
+    background: white;
+    border: 4px dashed #333;
+    padding: 15px;
+    margin-top: 25px;
+    text-align: center;
+}
 
-            <!-- HEADER -->
+.fake-record h2 {
+    font-family: Impact, Arial Black, sans-serif;
+}
 
-            <div class="potato-header">
+.tiny-text {
+    font-size: 10px;
+    color: #666;
+}
 
-                <div class="potato">
-                    🥔
-                </div>
+</style>
 
-                <h1>
-                    POTATO POETRY GENERATOR™
-                </h1>
 
-                <p>
-                    <strong>
-                        A DIVISION OF POTATO.png ENTERPRISES
-                    </strong>
-                </p>
+<div id="song-generator">
 
-                <p>
-                    "Because apparently potatoes have feelings."
-                </p>
+    <div class="song-title">
+        🎵 POTATO SONG GENERATOR™ 🎵
+    </div>
 
-            </div>
+    <div class="song-subtitle">
+        POTATO.png MUSIC TECHNOLOGY DIVISION
+        <br>
+        EST. SOMETIME AROUND 2004
+    </div>
 
 
-            <!-- WARNING -->
+    <div class="warning-box">
 
-            <div class="corporate-warning">
+        ⚠ IMPORTANT MUSIC NOTICE ⚠
 
-                ⚠ IMPORTANT POTATO NOTICE ⚠
+        <br><br>
 
-                <br><br>
+        THIS MACHINE MAY GENERATE MUSIC.
 
-                YOU ARE ABOUT TO GENERATE
-                <strong>ARTIFICIAL POTATO POETRY.</strong>
+        <br>
 
-                <br>
+        IT MAY ALSO GENERATE SOMETHING THAT
+        <br>
+        RESEMBLES MUSIC.
 
-                PLEASE REMAIN CALM.
+        <br><br>
 
-                <br><br>
+        PLEASE DO NOT OPERATE WHILE HOLDING
+        A POTATO.
 
-                <span class="tiny">
-                    Potato.png is not responsible for unexpected
-                    emotions, philosophical revelations, or sudden
-                    cravings for french fries.
-                </span>
+    </div>
 
-            </div>
 
+    <div class="song-machine">
 
-            <!-- FAKE COMPUTER TERMINAL -->
+        <div class="machine-header">
 
-            <div class="terminal">
+            POTATO MUSIC ENGINE v3.7.2004
 
-                POTATO POETRY OS v2.003
-                <br>
-                ----------------------------------------
-                <br>
+            <br>
 
-                Loading potato kernel...
-                <br>
+            > INITIALIZING AUDIO POTATO...
 
-                <span class="white">
-                    [OK]
-                </span>
+            <br>
 
-                <br>
+            > LOADING EMOTIONAL GUITAR SOLO...
 
-                Connecting to PotatoNet...
-                <br>
+            <br>
 
-                <span class="white">
-                    [OK]
-                </span>
+            > ERROR: GUITAR NOT FOUND
 
-                <br>
+            <br>
 
-                Dial-up connection detected...
-                <br>
+            > USING POTATO INSTEAD...
 
-                <span class="red">
-                    [ERROR: PLEASE HANG UP THE PHONE]
-                </span>
+            <br>
 
-                <br>
-
-                Attempting alternate connection...
-                <br>
-
-                Connecting through AOL...
-                <br>
-
-                <span class="white">
-                    [OK???]
-                </span>
-
-                <br>
-
-                Loading poetry engine...
-                <br>
-
-                <span class="white">
-                    [OK]
-                </span>
-
-                <br><br>
-
-                READY.
-
-            </div>
-
-
-            <!-- MACHINE -->
-
-            <div class="haiku-machine">
-
-                <div class="machine-title">
-
-                    POTATO HAIKU GENERATION TERMINAL
-
-                </div>
-
-
-                <div class="theme-area">
-
-                    <label for="theme">
-
-                        SELECT POTATO POETRY CATEGORY:
-
-                    </label>
-
-                    <br><br>
-
-                    <select id="theme">
-
-                        <option value="random">
-                            RANDOM POTATO
-                        </option>
-
-                        <option value="internet">
-                            EARLY INTERNET
-                        </option>
-
-                        <option value="corporate">
-                            CORPORATE POTATO
-                        </option>
-
-                        <option value="technology">
-                            TECHNOLOGY
-                        </option>
-
-                        <option value="food">
-                            POTATO FOOD
-                        </option>
-
-                        <option value="existential">
-                            POTATO PHILOSOPHY
-                        </option>
-
-                        <option value="chaos">
-                            EXTREME POTATO NONSENSE
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- HAIKU -->
-
-                <div class="haiku-screen" id="haikuScreen">
-
-                    <div class="haiku-line" id="line1">
-
-                        Potato waits quietly
-
-                        <small>
-                            [5 POTATO SYLLABLES]
-                        </small>
-
-                    </div>
-
-
-                    <div class="haiku-line" id="line2">
-
-                        The dial-up modem screams
-
-                        <small>
-                            [7 POTATO SYLLABLES]
-                        </small>
-
-                    </div>
-
-
-                    <div class="haiku-line" id="line3">
-
-                        Internet returns
-
-                        <small>
-                            [5 POTATO SYLLABLES]
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <!-- BUTTON -->
-
-                <button
-                    class="generate-button"
-                    onclick="generateHaiku()">
-
-                    🥔 GENERATE POTATO HAIKU 🥔
-
-                </button>
-
-
-                <div class="terminal">
-
-                    GENERATION STATUS:
-                    <br>
-                    <span id="status">
-                        WAITING FOR POTATO...
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-            <!-- CORPORATE AD -->
-
-            <div class="fake-ad">
-
-                <h2>
-                    HAVE YOU TRIED POTATO POETRY PLUS™?
-                </h2>
-
-                <p>
-                    The revolutionary new poetry service
-                    from Potato.png!
-                </p>
-
-                <p>
-                    Now featuring:
-                </p>
-
-                <ul style="text-align:left; display:inline-block;">
-
-                    <li>
-                        300% more potato
-                    </li>
-
-                    <li>
-                        Unlimited haikus*
-                    </li>
-
-                    <li>
-                        Internet Explorer compatibility
-                    </li>
-
-                    <li>
-                        MySpace Top 8 integration**
-                    </li>
-
-                    <li>
-                        Neopets-compatible emotional support
-                    </li>
-
-                    <li>
-                        Optional iPod synchronization
-                    </li>
-
-                </ul>
-
-                <br>
-
-                <button
-                    class="generate-button"
-                    style="width:70%;"
-                    onclick="fakePurchase()">
-
-                    BUY POTATO POETRY PLUS™
-
-                </button>
-
-                <p class="tiny">
-
-                    *There are only 300 haikus.
-                    <br>
-
-                    **There is no MySpace integration.
-                    We don't know what that would mean.
-
-                </p>
-
-            </div>
-
-
-            <!-- RECEIPT -->
-
-            <div class="receipt">
-
-POTATO.png™
-POETRY GENERATION RECEIPT
-================================
-
-SERVICE:
-Potato Haiku Generation
-
-HAIKUS GENERATED:
-<span id="counter">0</span>
-
-POTATO USED:
-1
-
-INTERNET USED:
-Probably
-
-DIAL-UP MINUTES:
-Unknown
-
-AOL CDs DESTROYED:
-0
-
-LIMEWIRE FILES:
-0
-
-FLASH PLUGINS:
-1
-
-EMOTIONAL DAMAGE:
-Minimal
-
-TOTAL:
-$0.00
-
-PAYMENT METHOD:
-POTATO
-
-THANK YOU FOR USING
-POTATO POETRY GENERATION SYSTEM™
-
-PLEASE DO NOT EAT THE COMPUTER.
-
-            </div>
-
-
-            <!-- EARLY INTERNET SECTION -->
-
-            <div class="fake-ad">
-
-                <h2>
-                    REMEMBER THE OLD INTERNET?
-                </h2>
-
-                <p>
-
-                    The gentle hum of a desktop computer.
-
-                    <br>
-
-                    The terrifying sound of dial-up.
-
-                    <br>
-
-                    Internet Explorer taking approximately
-                    three business days to load.
-
-                    <br>
-
-                    A mysterious AOL CD arriving in the mail.
-
-                    <br>
-
-                    Your AIM buddy list containing 47 people
-                    you haven't spoken to since 2003.
-
-                    <br>
-
-                    Someone asking what your MySpace layout is.
-
-                    <br>
-
-                    And somewhere...
-
-                    <br><br>
-
-                    <strong>
-                        A POTATO.
-                    </strong>
-
-                </p>
-
-            </div>
-
-
-            <!-- LEGAL -->
-
-            <div class="legal">
-
-                POTATO POETRY GENERATION SYSTEM™ is a fictional
-                product of Potato.png and is not affiliated with
-                any real potato company, internet service provider,
-                operating system, social network, video game,
-                media franchise, or suspicious grocery store.
-
-                <br><br>
-
-                References to early internet culture are included
-                for comedic purposes.
-
-                <br><br>
-
-                Potato Poetry Plus™ may not actually exist.
-
-                <br>
-
-                Potato.png cannot guarantee that generated poetry
-                will contain exactly 5-7-5 syllables because the
-                Potato Poetry Engine was programmed by a potato.
-
-                <br><br>
-
-                If your computer begins making potato noises,
-                please restart it.
-
-            </div>
-
+            > READY.
 
         </div>
 
 
-    </div><!-- end of main content -->
+        <div class="mode-select">
 
+            <strong>
+                SELECT MUSICAL MODE:
+            </strong>
+
+            <br><br>
+
+            <select id="songMode">
+
+                <option value="potato">
+                    🥔 POTATO
+                </option>
+
+                <option value="insane">
+                    💥 INSANE
+                </option>
+
+                <option value="random">
+                    🎲 RANDOM
+                </option>
+
+                <option value="ajnaiurgbl">
+                    AJNAIURGBL
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="song-screen">
+
+            <div id="songOutput" class="song-output">
+
+                <div class="song-name">
+                    POTATO SONG #1
+                </div>
+
+                [VERSE 1]
+
+                <br>
+
+                A potato rolled across the floor,
+                <br>
+                It rolled past the kitchen door.
+                <br>
+                Nobody knew where it would go,
+                <br>
+                So naturally we formed a show.
+
+                <br><br>
+
+                [CHORUS]
+
+                <br>
+
+                POTATO!
+                <br>
+                POTATO!
+                <br>
+                POTATO ON THE RADIO!
+
+                <br><br>
+
+                [BRIDGE]
+
+                <br>
+
+                The modem makes a funny sound.
+                <br>
+                The potato spins around.
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="generate-song"
+            onclick="generateSong()">
+
+            🎵 GENERATE SONG 🎵
+
+        </button>
+
+
+        <div class="status-box">
+
+            GENERATOR STATUS:
+
+            <br>
+
+            <span id="songStatus">
+                WAITING FOR MUSICAL POTATO...
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="fake-record">
+
+        <h2>
+            🎧 POTATO MUSIC PLAYER 2004™
+        </h2>
+
+        <p>
+
+            Your friends are listening to music.
+
+            <br>
+
+            Your friends are using MP3 players.
+
+            <br>
+
+            Your friends have iPods.
+
+            <br><br>
+
+            You?
+
+            <br><br>
+
+            <strong>
+                YOU HAVE A POTATO.
+            </strong>
+
+        </p>
+
+        <p class="tiny-text">
+
+            Compatible with Windows XP, Internet Explorer,
+            AOL, AIM, MySpace, and approximately 4% of iPods.
+
+        </p>
+
+    </div>
+
+
+    <div class="fake-record">
+
+        <h2>
+            POTATO MUSIC INDUSTRY NEWS
+        </h2>
+
+        <p>
+
+            ★ Potato.png has officially announced
+            the release of Potato Album 7.
+
+            <br><br>
+
+            ★ Critics describe it as
+            <em>"technically audible."</em>
+
+            <br><br>
+
+            ★ The album contains 14 tracks,
+            13 of which are about potatoes.
+
+            <br><br>
+
+            ★ Track 14 is just someone saying
+            "AJNAIURGBL" for three minutes.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/*
+==================================================
+POTATO SONG GENERATOR
+Potato.png Music Division
+==================================================
+*/
+
+
+const songs = {
+
+
+    potato: [
+
+`[VERSE 1]
+
+The potato woke up late,
+And wandered through the garden gate.
+It saw a carrot standing there,
+Wearing someone's folding chair.
+
+[CHORUS]
+
+POTATO!
+POTATO!
+ROLLING THROUGH THE NIGHT!
+
+POTATO!
+POTATO!
+EVERYTHING'S ALRIGHT!
+
+[VERSE 2]
+
+Butter on the counter,
+Gravy in the pan,
+Potato looked around and said,
+"I think I have a plan."
+
+[BRIDGE]
+
+French fries in the moonlight,
+Hash browns in the rain,
+The potato keeps on rolling,
+Again and yet again.
+
+[FINAL CHORUS]
+
+POTATO!
+POTATO!
+SPUDS FOREVERMORE!`,
+
+
+
+`[VERSE 1]
+
+I found a potato
+Inside my backpack today.
+I don't remember
+Putting it there yesterday.
+
+[CHORUS]
+
+HEY!
+
+WHO PUT THE SPUD IN MY BAG?
+
+HEY!
+
+WHO GAVE THE POTATO A FLAG?
+
+[VERSE 2]
+
+It doesn't know karate,
+It doesn't know kung fu,
+But somehow this potato
+Has more confidence than you.
+
+[BRIDGE]
+
+The microwave is humming,
+The toaster starts to glow,
+The potato whispers softly:
+
+"Let's go."
+
+[FINAL CHORUS]
+
+POTATO!
+POTATO!
+THE SPUD HAS LEFT THE BUILDING!`,
+
+
+
+`[VERSE 1]
+
+Potato on a skateboard,
+Potato on a train,
+Potato wearing sunglasses
+In the middle of the rain.
+
+[CHORUS]
+
+ROLL, SPUD, ROLL!
+
+ROLL ACROSS THE FLOOR!
+
+ROLL, SPUD, ROLL!
+
+WHAT ARE YOU WAITING FOR?
+
+[VERSE 2]
+
+A muffin joins the chorus,
+A pickle plays guitar,
+The refrigerator drummer
+Has become a superstar.
+
+[BRIDGE]
+
+Nobody knows the lyrics,
+Nobody knows the tune,
+But everybody's dancing
+Underneath the potato moon.`
+
+    ],
+
+
+
+    insane: [
+
+`[VERSE 1]
+
+THE TOASTER HAS AWAKENED!
+
+THE SPOON HAS FOUND ITS VOICE!
+
+THE POTATO HAS PURCHASED
+A SMALL CONVERTIBLE!
+
+[CHORUS]
+
+RUN!
+
+THE GRAVY IS COMING!
+
+RUN!
+
+THE GRAVY KNOWS YOUR NAME!
+
+[VERSE 2]
+
+A duck enters the office,
+Wearing seventeen hats,
+The fax machine applauds,
+And somebody adopts six cats.
+
+[BRIDGE]
+
+WINDOWS XP!
+
+WINDOWS XP!
+
+WHY ARE YOU ASKING ME TO UPDATE?
+
+I DON'T KNOW WHAT YEAR IT IS!
+
+[FINAL CHORUS]
+
+POTATO!
+
+SPOON!
+
+CHAIR!
+
+MUFFIN!
+
+EVERYTHING IS FINE!`,
+
+
+
+`[VERSE 1]
+
+A potato fell upward,
+The ceiling said hello,
+A sandwich bought a motorcycle,
+And taught it how to row.
+
+[CHORUS]
+
+BANANA TELEPHONE!
+
+POTATO INTERNET!
+
+THE MOON IS USING BLUETOOTH!
+
+WE HAVE MADE A TERRIBLE DECISION!
+
+[VERSE 2]
+
+The printer printed waffles,
+The waffles formed a band,
+The band released an album
+Called "Please Don't Touch That."
+
+[BRIDGE]
+
+A tiny marching band
+Appeared inside the sink,
+The sink became their manager,
+And now they own a rink.`,
+
+
+
+`[VERSE 1]
+
+THE FLOOR IS MADE OF JELLY!
+
+THE WALLS ARE MADE OF CHEESE!
+
+THE POTATO HAS A LICENSE
+TO OPERATE THE BREEZE!
+
+[CHORUS]
+
+AAAAAAAAAA!
+
+[VERSE 2]
+
+A calculator sneezed,
+The keyboard yelled "GOODBYE!",
+A squirrel opened Excel,
+And somehow made a pie.
+
+[BRIDGE]
+
+The universe is loading...
+
+Please wait...
+
+Please wait...
+
+Please wait...
+
+[FINAL CHORUS]
+
+POTATO HAS STOPPED RESPONDING.
+
+PLEASE RESTART POTATO.`
+
+    ],
+
+
+
+    random: [
+
+`[VERSE 1]
+
+The mailbox knows my password,
+The carpet knows my name,
+A squirrel opened Microsoft Word,
+And nothing was the same.
+
+[CHORUS]
+
+WHAT IS HAPPENING?
+
+NOBODY KNOWS!
+
+SOMEONE PRESS THE BUTTON!
+
+PLEASE DON'T PRESS THE BUTTON!
+
+[BRIDGE]
+
+The button has been pressed.
+
+Uh oh.`,
+
+
+
+`[VERSE 1]
+
+A dinosaur found Wi-Fi,
+A toaster found a job,
+A tiny purple notebook
+Became the mayor of Bob.
+
+[CHORUS]
+
+HELLO, INTERNET!
+
+GOODBYE, REALITY!
+
+PLEASE WAIT WHILE WE DOWNLOAD
+THE NEXT THREE MINUTES.
+
+[VERSE 2]
+
+The moon sent us a postcard,
+The mailbox sent one back,
+A potato bought a telescope,
+And accidentally found a snack.`,
+
+
+
+`[VERSE 1]
+
+My pencil has opinions,
+My eraser owns a car,
+My backpack joined a rock band,
+And now they are bizarre.
+
+[CHORUS]
+
+ROCK THE PENCIL!
+
+SHAKE THE CHAIR!
+
+SOMEONE PUT A MUFFIN
+IN THE SOFTWARE!
+
+[VERSE 2]
+
+The keyboard wants vacation,
+The mouse wants to retire,
+The monitor is singing,
+And the printer caught on fire.
+
+[BRIDGE]
+
+Wait.
+
+That's not a metaphor.
+
+[FINAL CHORUS]
+
+TURN IT OFF!
+
+TURN IT ON!
+
+TURN IT OFF AGAIN!`
+
+    ],
+
+
+
+    ajnaiurgbl: [
+
+`[VERSE 1]
+
+AJNAIURGBL
+
+AJNAIURGBL
+
+FLERP BLORP
+
+SNAKDJF POTATO
+
+[CHORUS]
+
+AJNAIURGBL!
+
+AJNAIURGBL!
+
+GRONK!
+
+[VERSE 2]
+
+WIBBLE WOBBLE
+SPORKALOO
+BLING BLONG
+ZEEP ZEEP ZEEP
+
+[BRIDGE]
+
+AAAAAAAAAAAAAAAA
+
+but quietly.
+
+[FINAL CHORUS]
+
+AJNAIURGBL
+
+AJNAIURGBL
+
+POTATO
+
+GOODBYE.`,
+
+
+
+`[VERSE 1]
+
+BLOP!
+
+FRANG!
+
+WUM WUM WUM!
+
+AJNAIURGBL!
+
+[CHORUS]
+
+GLOMP!
+
+GLOMP!
+
+GLOMP!
+
+[VERSE 2]
+
+SKRIBBLE
+DORP
+FLIBBITY
+POTATO
+
+[BRIDGE]
+
+The computer has no idea
+what is happening.
+
+Neither do we.
+
+[FINAL CHORUS]
+
+AJNAIURGBL!
+
+BLORP!
+
+POTATO!
+
+END.`,
+
+
+
+`[VERSE 1]
+
+GRAAAAH
+
+but like
+
+in a musical way.
+
+[CHORUS]
+
+AJNAIURGBL
+AJNAIURGBL
+AJNAIURGBL
+
+[VERSE 2]
+
+SPROING!
+
+WOBBLE!
+
+BEEP!
+
+POTATO!
+
+[BRIDGE]
+
+▓▒░ ERROR ░▒▓
+
+[FINAL CHORUS]
+
+AJNAIURGBL
+
+AJNAIURGBL
+
+AJNAIURGBL
+
+THANK YOU FOR LISTENING.`
+
+    ]
+
+};
+
+
+let songCount = 0;
+
+
+function generateSong() {
+
+    const mode =
+        document.getElementById("songMode").value;
+
+    const output =
+        document.getElementById("songOutput");
+
+    const status =
+        document.getElementById("songStatus");
+
+
+    status.innerHTML =
+        "CONNECTING TO POTATO MUSIC SERVER...";
+
+
+    output.style.opacity = "0.3";
+
+
+    setTimeout(function() {
+
+        status.innerHTML =
+            "DOWNLOADING MUSICAL POTATO...";
+
+    }, 300);
+
+
+    setTimeout(function() {
+
+        status.innerHTML =
+            "TUNING VIRTUAL GUITAR...";
+
+    }, 600);
+
+
+    setTimeout(function() {
+
+        const songList = songs[mode];
+
+        const selectedSong =
+            songList[
+                Math.floor(
+                    Math.random() * songList.length
+                )
+            ];
+
+
+        songCount++;
+
+
+        const songNumber =
+            Math.floor(Math.random() * 9999) + 1;
+
+
+        output.innerHTML =
+            `<div class="song-name">
+                POTATO SONG #${songNumber}
+            </div>
+            ${selectedSong}`;
+
+
+        output.style.opacity = "1";
+
+
+        status.innerHTML =
+            "SONG GENERATED SUCCESSFULLY. " +
+            "PLEASE ENJOY RESPONSIBLY.";
+
+
+    }, 900);
+
+}
+
+
+</script>
+
+</div>
 
     <!-- SIDEBAR -->
 
@@ -793,25 +1280,25 @@ PLEASE DO NOT EAT THE COMPUTER.
 
             [
                 "Potato sits still",
-                "A modem screams in the night",
+                "A sock screams in the toaster",
                 "Nobody logs on"
             ],
 
             [
                 "The potato waits",
-                "Internet Explorer loads",
-                "It is Tuesday now"
+                "Internet Exploder loads",
+                "It is Tuesday noooooooooo"
             ],
 
             [
                 "Potato online",
-                "Someone added me on AIM",
+                "Someone gifted me an ATM",
                 "I forgot their name"
             ],
 
             [
                 "A potato rolls",
-                "My computer makes a noise",
+                "My pet lobster makes a noise",
                 "Everything is fine"
             ],
 
@@ -823,14 +1310,14 @@ PLEASE DO NOT EAT THE COMPUTER.
 
             [
                 "Small potato dreams",
-                "Of becoming a web star",
-                "Then discovers dial-up"
+                "Of becoming a black hole",
+                "Suddenly salad"
             ],
 
             [
-                "A website loads slow",
-                "The potato has already left",
-                "Please try again"
+                "Oo we oo oh oh",
+                "Look just like buddy holly",
+                "Mary Tyler Moore"
             ]
 
         ],
@@ -839,13 +1326,13 @@ PLEASE DO NOT EAT THE COMPUTER.
         internet: [
 
             [
-                "Dial-up sings again",
+                "Virus everywhere",
                 "The loading bar has stopped moving",
                 "Potato accepts"
             ],
 
             [
-                "AIM window opens",
+                " opens",
                 "Someone's away message reads",
                 "Potato knows why"
             ],
